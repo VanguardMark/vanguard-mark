@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard | Vanguard Mark</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #090909;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 18px 6%;
+      background: #111111;
+      border-bottom: 1px solid #3a301c;
+    }
+
+    .brand {
+      color: #d8b45a;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header a {
+      color: #d8b45a;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    .welcome {
+      margin-bottom: 30px;
+    }
+
+    .welcome h1 {
+      margin: 0 0 12px;
+      font-size: clamp(26px, 5vw, 38px);
+    }
+
+    .welcome h1 span {
+      color: #d8b45a;
+    }
+
+    .muted {
+      color: #aaaaaa;
+      line-height: 1.7;
+    }
+
+    .account-card {
+      padding: 22px;
+      margin-bottom: 25px;
+      background: #151515;
+      border: 1px solid #40351f;
+      border-radius: 12px;
+    }
+
+    .account-card h2,
+    .section-heading {
+      margin-top: 0;
+      font-size: 19px;
+    }
+
+    #userEmail {
+      color: #d8b45a;
+      overflow-wrap: anywhere;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 250px), 1fr)
+      );
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      background: #151515;
+      border: 1px solid #343434;
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #d8b45a;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: #bbbbbb;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 7px;
+      background: #d8b45a;
+      color: #111111;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: #292929;
+      color: #ffffff;
+      border: 1px solid #555555;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 18px;
+      background: #17150f;
+      border-left: 3px solid #d8b45a;
+      color: #c9c0aa;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    #status {
+      color: #d8b45a;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      margin-top: 45px;
+      padding: 25px 15px;
+      text-align: center;
+      color: #777777;
+      border-top: 1px solid #292929;
+      font-size: 13px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 16px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      main {
+        padding: 28px 16px;
+      }
+
+      .account-card,
+      .card {
+        padding: 19px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="brand">VANGUARD MARK</div>
+    <a href="./index.html">Visit website ↗</a>
+  </header>
+
+  <main id="dashboard" hidden>
+
+    <section class="welcome">
+      <h1>Your creative <span>dashboard.</span></h1>
+      <p class="muted">
+        Manage your account and get ready to bring your logo ideas to life.
+      </p>
+    </section>
+
+    <section class="account-card">
+      <h2>Account overview</h2>
+
+      <p class="muted">Signed in as:</p>
+      <p id="userEmail">Loading account...</p>
+
+      <p class="muted">
+        Your Vanguard Mark account is active.
+      </p>
+
+      <button class="button secondary" id="logoutButton">
+        Log out
+      </button>
+    </section>
+
+    <section>
+      <h2 class="section-heading">Your workspace</h2>
+
+      <div class="grid">
+
+        <article class="card">
+          <h3>Submit a logo</h3>
+
+          <p>
+            Get ready to submit your logo design for review.
+            The submission system will be connected in a future step.
+          </p>
+
+          <button class="button" id="logoButton">
+            Logo submissions coming soon
+          </button>
+        </article>
+
+        <article class="card">
+          <h3>My submissions</h3>
+
+          <p>
+            Your submitted logos and their review statuses will
+            appear here once the submission system is connected.
+          </p>
+
+          <button class="button secondary" id="submissionsButton">
+            View submissions
+          </button>
+        </article>
+
+        <article class="card">
+          <h3>Account security</h3>
+
+          <p>
+            Forgotten your password? Request a password reset
+            using your account email.
+          </p>
+
+          <button class="button secondary" id="resetButton">
+            Reset password
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="notice">
+      <strong>Coming next:</strong>
+      Logo uploads, submission tracking, and a secure database
+      for your design projects. These features are not active yet.
+    </div>
+
+    <p id="status" role="status" aria-live="polite"></p>
+
+  </main>
+
+  <section id="loading" style="padding:60px 20px;text-align:center">
+    <p>Checking your account...</p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Vanguard Mark. All rights reserved.
+  </footer>
+
+  <script type="module">
+    import {
+      auth,
+      signOut,
+      onAuthStateChanged
+    } from "./firebase.js";
+
+    import {
+      sendPasswordResetEmail
+    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+    const dashboard = document.getElementById("dashboard");
+    const loading = document.getElementById("loading");
+    const userEmail = document.getElementById("userEmail");
+    const status = document.getElementById("status");
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    let currentUser = null;
+
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+
+      loading.hidden = true;
+
+      if (!user) {
+        dashboard.hidden = true;
+
+        // Return visitors who are not logged in to the account page.
+        window.location.replace("./account.html");
+        return;
+      }
+
+      dashboard.hidden = false;
+      userEmail.textContent = user.email || "Email unavailable";
+    });
+
+    document.getElementById("logoutButton").addEventListener(
+      "click",
+      async () => {
+        try {
+          await signOut(auth);
+          window.location.replace("./account.html");
+        } catch (error) {
+          status.textContent = "Unable to log out. Please try again.";
+        }
+      }
+    );
+
+    document.getElementById("logoButton").addEventListener(
+      "click",
+      () => {
+        status.textContent =
+          "Logo submissions are not available yet. We'll build this feature next.";
+      }
+    );
+
+    document.getElementById("submissionsButton").addEventListener(
+      "click",
+      () => {
+        status.textContent =
+          "Your submission history will be available after we connect the database.";
+      }
+    );
+
+    document.getElementById("resetButton").addEventListener(
+      "click",
+      async () => {
+        if (!currentUser || !currentUser.email) {
+          status.textContent =
+            "We couldn't find your account email.";
+          return;
+        }
+
+        try {
+          await sendPasswordResetEmail(auth, currentUser.email);
+
+          status.textContent =
+            "If the request succeeds, a password reset email will be sent to your account address.";
+        } catch (error) {
+          status.textContent =
+            "Unable to send a reset email right now. Please try again later.";
+        }
+      }
+    );
+  </script>
+
+</body>
+  </html>
