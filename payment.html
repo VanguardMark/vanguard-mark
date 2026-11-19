@@ -1,9 +1,12 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0b0b">
-<title>Secure Entry Payment | Vanguard Mark</title><style>
+<title>Secure Entry Payment | Vanguard Mark</title>
+
+<style>
 * {
   box-sizing: border-box;
 }
@@ -107,12 +110,6 @@ button:disabled {
   cursor: wait;
 }
 
-.secondary {
-  background: #292929;
-  color: #fff;
-  border: 1px solid #555;
-}
-
 .notice {
   font-size: 13px;
   background: #211d13;
@@ -132,64 +129,72 @@ footer {
   color: #777;
   font-size: 13px;
 }
-</style></head><body><header>
-  <div class="brand">VANGUARD MARK</div>  <nav>
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">VANGUARD MARK</div>
+
+  <nav aria-label="Main navigation">
     <a href="./dashboard.html">Dashboard</a>
     <a href="./submit.html">Submit a logo</a>
     <a href="./support.html">Support</a>
   </nav>
-</header><main>
-  <section class="card"><h1>Confirm your <span class="gold">entry</span></h1>
+</header>
 
-<p>Review your logo submission before continuing to payment.</p>
+<main>
+  <section class="card">
 
-<div class="summary">
+    <h1>Confirm your <span class="gold">entry</span></h1>
 
-  <div class="row">
-    <span>Competition entry</span>
-    <strong>Vanguard Mark</strong>
-  </div>
+    <div class="summary">
 
-  <div class="row">
-    <span>Entry fee</span>
-    <strong>$3.00 USD</strong>
-  </div>
+      <div class="row">
+        <span>Competition entry</span>
+        <strong>Vanguard Mark</strong>
+      </div>
 
-  <div class="row total">
-    <span>Total</span>
-    <span class="gold">$3.00 USD</span>
-  </div>
+      <div class="row">
+        <span>Entry fee</span>
+        <strong>$3.00 USD</strong>
+      </div>
 
-</div>
+      <div class="row total">
+        <span>Total</span>
+        <span class="gold">$3.00 USD</span>
+      </div>
 
-<p id="logoTitle">Checking your submission...</p>
+    </div>
 
-<div class="notice">
-  Your entry will not be marked as paid until the payment provider
-  verifies the payment. Test payments do not count as real entries.
-</div>
+    <p id="logoTitle">Checking your submission...</p>
 
-<button id="payButton" type="button">
-  Continue to PayMeGate
-</button>
+    <div class="notice">
+      Your entry will not be marked as paid until the payment provider
+      verifies the payment. Test payments do not count as real entries.
+    </div>
 
-<button id="testButton" class="secondary" type="button">
-  Simulate payment (development only)
-</button>
+    <button id="payButton" type="button">
+      Submit
+    </button>
 
-<p id="status" role="status" aria-live="polite"></p>
+    <p id="status" role="status" aria-live="polite"></p>
 
   </section>
-</main><footer>
+</main>
+
+<footer>
   Vanguard Mark · Payment and entry status
-</footer><script type="module">
+</footer>
+
+<script type="module">
 import { auth, onAuthStateChanged } from "./firebase.js";
 
 const WORKER_URL =
   "https://vanguardmark-payments.jobsaii181.workers.dev/create-order";
 
 const payButton = document.getElementById("payButton");
-const testButton = document.getElementById("testButton");
 const status = document.getElementById("status");
 const title = document.getElementById("logoTitle");
 
@@ -224,21 +229,31 @@ title.textContent = pending?.title
   ? "Logo: " + pending.title
   : "No pending logo submission was found. Please submit your logo first.";
 
-onAuthStateChanged(auth, currentUser => {
-  user = currentUser;
-  authReady = true;
+onAuthStateChanged(
+  auth,
+  currentUser => {
+    user = currentUser;
+    authReady = true;
 
-  if (!currentUser) {
-    window.location.href = "./account.html";
-    return;
-  }
+    if (!currentUser) {
+      window.location.href = "./account.html";
+      return;
+    }
 
-  if (pending && pending.userId !== currentUser.uid) {
-    pending = null;
-    title.textContent =
-      "No valid submission was found. Please submit your logo again.";
+    if (pending && pending.userId !== currentUser.uid) {
+      pending = null;
+
+      title.textContent =
+        "No valid submission was found. Please submit your logo again.";
+    }
+  },
+  error => {
+    console.error("Authentication check failed:", error);
+    authReady = true;
+    showStatus("Unable to verify your account. Please reload the page.");
+    payButton.disabled = true;
   }
-});
+);
 
 payButton.addEventListener("click", async () => {
   if (busy) return;
@@ -262,7 +277,6 @@ payButton.addEventListener("click", async () => {
 
   busy = true;
   payButton.disabled = true;
-  testButton.disabled = true;
 
   showStatus("Connecting to the payment service...");
 
@@ -320,41 +334,17 @@ payButton.addEventListener("click", async () => {
     window.location.assign(checkoutURL.href);
 
   } catch (error) {
+    console.error("Checkout creation failed:", error);
+
     showStatus(
       error.message || "Unable to start checkout. Please try again."
     );
 
     busy = false;
     payButton.disabled = false;
-    testButton.disabled = false;
   }
 });
+</script>
 
-testButton.addEventListener("click", () => {
-  if (!authReady || !validateSubmission()) {
-    showStatus(
-      "Please sign in and prepare a valid logo submission first."
-    );
-    return;
-  }
-
-  const demoEntry = {
-    submissionId: pending.id,
-    title: pending.title,
-    paymentStatus: "simulation_only",
-    submissionStatus: "test_only",
-    demoOnly: true,
-    testedAt: new Date().toISOString()
-  };
-
-  sessionStorage.setItem(
-    "vanguardMarkDemoPayment",
-    JSON.stringify(demoEntry)
-  );
-
-  showStatus(
-    "Simulation complete. No money was charged. This is not a paid entry."
-  );
-});
-</script></body>
+</body>
 </html>
