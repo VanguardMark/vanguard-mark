@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0b0b0b">
-  <meta name="description" content="Manage your Vanguard Mark account, logo competition submissions, and entry payments.">
-
-  <title>Dashboard | Vanguard Mark</title>
-
-  <style>
+  <meta name="description" content="Manage your Vanguard Mark account, logo competition submissions, and entry payments.">  <title>Dashboard | Vanguard Mark</title>  <style>
     * {
       box-sizing: border-box;
     }
@@ -266,193 +261,158 @@
         padding: 19px;
       }
     }
-  </style>
-</head>
+  </style></head><body>  <header>
+    <div class="brand">VANGUARD MARK</div><nav aria-label="Main navigation">
+  <a href="./index.html">Home</a>
+  <a href="./submit.html">Submit a logo</a>
+  <a href="./payment.html">Entry payment</a>
+  <a href="./account.html">Account</a>
+</nav>
 
-<body>
-
-  <header>
-    <div class="brand">VANGUARD MARK</div>
-
-    <nav aria-label="Main navigation">
-      <a href="./index.html">Home</a>
-      <a href="./submit.html">Submit a logo</a>
-      <a href="./payment.html">Entry payment</a>
-      <a href="./account.html">Account</a>
-    </nav>
-  </header>
-
-  <section
+  </header>  <section
     id="loading"
     role="status"
     aria-live="polite"
     style="padding:60px 20px;text-align:center"
   >
     <p>Checking your account...</p>
-  </section>
+  </section>  <main id="dashboard" hidden><section class="welcome">
+  <h1>Your creative <span>dashboard.</span></h1>
 
-  <main id="dashboard" hidden>
+  <p class="muted">
+    Manage your account and access your Vanguard Mark workspace.
+    Prepare logo submissions, access entry payment, and review
+    the available account tools from one place.
+  </p>
+</section>
 
-    <section class="welcome">
-      <h1>Your creative <span>dashboard.</span></h1>
+<section class="account-card">
+  <h2>Account overview</h2>
 
-      <p class="muted">
-        Manage your account and access your Vanguard Mark workspace.
-        Prepare logo submissions, access entry payment, and review
-        the available account tools from one place.
+  <p class="muted">Signed in as:</p>
+
+  <p id="userEmail">Loading account...</p>
+
+  <button
+    class="button secondary"
+    id="logoutButton"
+    type="button"
+  >
+    Log out
+  </button>
+</section>
+
+<section>
+  <h2 class="section-heading">Your workspace</h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <h3>Submit a logo</h3>
+
+      <p>
+        Open the submission page to prepare your logo design
+        for the competition. Review the requirements and provide
+        the requested information before submitting your entry.
       </p>
-    </section>
 
-    <section class="account-card">
-      <h2>Account overview</h2>
+      <a class="button" href="./submit.html">
+        Open submissions
+      </a>
+    </article>
 
-      <p class="muted">Signed in as:</p>
+    <article class="card">
+      <h3>Entry payment</h3>
 
-      <p id="userEmail">Loading account...</p>
+      <p>
+        Continue to the entry payment page when you have
+        prepared a logo submission. Follow the available
+        checkout instructions and wait for payment verification
+        before treating your entry as paid.
+      </p>
+
+      <a class="button" href="./payment.html">
+        Open payment page
+      </a>
+    </article>
+
+    <article class="card">
+      <h3>Prize withdrawals</h3>
+
+      <p>
+        Withdrawal services are not yet active. No prize balance,
+        winning status, or withdrawal eligibility is confirmed
+        on this page. Any future withdrawal must follow the
+        official competition rules and verification process.
+      </p>
 
       <button
         class="button secondary"
-        id="logoutButton"
+        id="withdrawButton"
         type="button"
       >
-        Log out
+        Withdrawal information
       </button>
-    </section>
+    </article>
 
-    <section>
-      <h2 class="section-heading">Your workspace</h2>
+    <article class="card">
+      <h3>Competition information</h3>
 
-      <div class="grid">
-
-        <article class="card">
-          <h3>Submit a logo</h3>
-
-          <p>
-            Open the submission page to prepare your logo design
-            for the competition. Review the requirements and provide
-            the requested information before submitting your entry.
-          </p>
-
-          <a class="button" href="./submit.html">
-            Open submissions
-          </a>
-        </article>
-
-        <article class="card">
-          <h3>Entry payment</h3>
-
-          <p>
-            Continue to the entry payment page when you have
-            prepared a logo submission. Follow the available
-            checkout instructions and wait for payment verification
-            before treating your entry as paid.
-          </p>
-
-          <a class="button" href="./payment.html">
-            Open payment page
-          </a>
-        </article>
-
-        <article class="card">
-          <h3>My submissions</h3>
-
-          <p>
-            Check for submission information saved in this browser.
-            Permanent submission history and verified payment
-            statuses require connected server records.
-          </p>
-
-          <button
-            class="button secondary"
-            id="submissionsButton"
-            type="button"
-          >
-            Check status
-          </button>
-        </article>
-
-        <article class="card">
-          <h3>Prize withdrawals</h3>
-
-          <p>
-            Withdrawal services are not yet active. No prize balance,
-            winning status, or withdrawal eligibility is confirmed
-            on this page. Any future withdrawal must follow the
-            official competition rules and verification process.
-          </p>
-
-          <button
-            class="button secondary"
-            id="withdrawButton"
-            type="button"
-          >
-            Withdrawal information
-          </button>
-        </article>
-
-        <article class="card">
-          <h3>Competition information</h3>
-
-          <p>
-            Read the official competition terms, review the privacy
-            policy, and learn about the applicable refund policy.
-          </p>
-
-          <div class="policy-links">
-            <a href="./competition-terms.html">
-              Competition terms
-            </a>
-
-            <a href="./privacy.html">
-              Privacy policy
-            </a>
-
-            <a href="./refund-policy.html">
-              Refund policy
-            </a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section
-      class="status-box"
-      aria-labelledby="activityHeading"
-    >
-      <h3 id="activityHeading">Account activity</h3>
-
-      <p
-        id="status"
-        role="status"
-        aria-live="polite"
-      >
-        Your dashboard is ready.
+      <p>
+        Read the official competition terms, review the privacy
+        policy, and learn about the applicable refund policy.
       </p>
-    </section>
 
-  </main>
+      <div class="policy-links">
+        <a href="./competition-terms.html">
+          Competition terms
+        </a>
 
-  <footer>
+        <a href="./privacy.html">
+          Privacy policy
+        </a>
+
+        <a href="./refund-policy.html">
+          Refund policy
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section
+  class="status-box"
+  aria-labelledby="activityHeading"
+>
+  <h3 id="activityHeading">Account activity</h3>
+
+  <p
+    id="status"
+    role="status"
+    aria-live="polite"
+  >
+    Your dashboard is ready.
+  </p>
+</section>
+
+  </main>  <footer>
     <p>
       © <span id="year"></span> Vanguard Mark.
       All rights reserved.
-    </p>
+    </p><p>
+  <a href="./index.html">Home</a>
+  &nbsp;|&nbsp;
+  <a href="./account.html">Account</a>
+  &nbsp;|&nbsp;
+  <a href="./competition-terms.html">Competition terms</a>
+  &nbsp;|&nbsp;
+  <a href="./privacy.html">Privacy</a>
+  &nbsp;|&nbsp;
+  <a href="./refund-policy.html">Refund policy</a>
+</p>
 
-    <p>
-      <a href="./index.html">Home</a>
-      &nbsp;|&nbsp;
-      <a href="./account.html">Account</a>
-      &nbsp;|&nbsp;
-      <a href="./competition-terms.html">Competition terms</a>
-      &nbsp;|&nbsp;
-      <a href="./privacy.html">Privacy</a>
-      &nbsp;|&nbsp;
-      <a href="./refund-policy.html">Refund policy</a>
-    </p>
-  </footer>
-
-  <script type="module">
+  </footer>  <script type="module">
     import {
       auth,
       signOut,
@@ -466,9 +426,6 @@
 
     const logoutButton =
       document.getElementById("logoutButton");
-
-    const submissionsButton =
-      document.getElementById("submissionsButton");
 
     const withdrawButton =
       document.getElementById("withdrawButton");
@@ -580,59 +537,6 @@
       }
     );
 
-    submissionsButton.addEventListener(
-      "click",
-      () => {
-        if (!currentUser) {
-          showStatus(
-            "Please sign in again to check your submission information."
-          );
-          return;
-        }
-
-        let pending = null;
-
-        try {
-          pending = JSON.parse(
-            sessionStorage.getItem(
-              "vanguardMarkPendingSubmission"
-            ) || "null"
-          );
-        } catch (error) {
-          console.error(
-            "Unable to read local submission information:",
-            error
-          );
-        }
-
-        if (
-          pending &&
-          pending.userId === currentUser.uid
-        ) {
-          const title =
-            typeof pending.title === "string" &&
-            pending.title.trim()
-              ? pending.title.trim()
-              : "Untitled";
-
-          showStatus(
-            "Current browser submission: " +
-            title +
-            ". This is local browser information, not a verified server record. " +
-            "A permanent submission history requires a connected database."
-          );
-
-          return;
-        }
-
-        showStatus(
-          "No local submission was found in this browser session. " +
-          "This does not prove that no submission exists. " +
-          "A permanent submission history requires a connected database."
-        );
-      }
-    );
-
     withdrawButton.addEventListener(
       "click",
       () => {
@@ -644,7 +548,5 @@
         );
       }
     );
-  </script>
-
-</body>
+  </script></body>
       </html>
