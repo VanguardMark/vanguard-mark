@@ -1,201 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Account | Vanguard Mark</title>
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: #090909;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 420px;
-      padding: 30px;
-      background: #151515;
-      border: 1px solid #b99745;
-      border-radius: 14px;
-    }
-
-    .brand {
-      color: #d8b45a;
-      font-size: 25px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #aaaaaa;
-      margin-bottom: 28px;
-      line-height: 1.5;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 7px;
-      font-size: 14px;
-    }
-
-    input {
-      width: 100%;
-      padding: 13px;
-      background: #090909;
-      color: #ffffff;
-      border: 1px solid #444444;
-      border-radius: 7px;
-      font-size: 16px;
-    }
-
-    input:focus {
-      outline: 1px solid #d8b45a;
-      border-color: #d8b45a;
-    }
-
-    button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 16px;
-      border: none;
-      border-radius: 7px;
-      background: #d8b45a;
-      color: #111111;
-      font-weight: bold;
-      font-size: 15px;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      opacity: 0.6;
-      cursor: wait;
-    }
-
-    .secondary {
-      background: #292929;
-      color: #ffffff;
-      border: 1px solid #555555;
-    }
-
-    .switch {
-      text-align: center;
-      margin-top: 22px;
-      color: #bbbbbb;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    a {
-      color: #d8b45a;
-    }
-
-    #message {
-      margin-top: 18px;
-      font-size: 14px;
-      line-height: 1.6;
-      overflow-wrap: anywhere;
-    }
-
-    .back {
-      display: block;
-      margin-top: 22px;
-      text-align: center;
-    }
-
-    [hidden] {
-      display: none !important;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:#090909;color:#fff;font-family:Arial,sans-serif}
+    .card{width:100%;max-width:420px;padding:30px;background:#151515;border:1px solid #b99745;border-radius:14px}
+    .brand{color:#d8b45a;font-size:25px;font-weight:bold;text-align:center;margin-bottom:8px}
+    .subtitle{text-align:center;color:#aaa;margin-bottom:28px;line-height:1.5}
+    h2{font-size:22px;margin-bottom:20px}
+    label{display:block;margin:15px 0 7px;font-size:14px}
+    input{width:100%;padding:13px;background:#090909;color:#fff;border:1px solid #444;border-radius:7px;font-size:16px}
+    input:focus{outline:1px solid #d8b45a;border-color:#d8b45a}
+    button{width:100%;padding:13px;margin-top:16px;border:none;border-radius:7px;background:#d8b45a;color:#111;font-weight:bold;font-size:15px;cursor:pointer}
+    button:disabled{opacity:.6;cursor:wait}
+    .secondary{background:#292929;color:#fff;border:1px solid #555}
+    .switch{text-align:center;margin-top:22px;color:#bbb;font-size:14px;line-height:1.8}
+    a{color:#d8b45a}
+    #message{margin-top:18px;font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+    .back{display:block;margin-top:22px;text-align:center}
+    [hidden]{display:none!important}
   </style>
 </head>
-
 <body>
   <main class="card">
     <div class="brand">VANGUARD MARK</div>
+    <p class="subtitle">Your account. Your creative work.</p><section id="authSection">
+  <h2 id="formTitle">Create your account</h2>
+  <form id="accountForm">
+    <label for="email">Email address</label>
+    <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
 
-    <p class="subtitle">
-      Your account. Your creative work.
-    </p>
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters" required>
 
-    <section id="authSection">
-      <h2 id="formTitle">Create your account</h2>
+    <button id="submitButton" type="submit">Create account</button>
+  </form>
 
-      <form id="accountForm">
-        <label for="email">Email address</label>
-        <input
-          id="email"
-          type="email"
-          autocomplete="email"
-          placeholder="you@example.com"
-          required
-        >
+  <button id="switchButton" class="secondary" type="button">Already have an account? Log in</button>
+  <button id="resetButton" class="secondary" type="button" hidden>Reset password</button>
+</section>
 
-        <label for="password">Password</label>
-        <input
-          id="password"
-          type="password"
-          autocomplete="new-password"
-          minlength="6"
-          placeholder="At least 6 characters"
-          required
-        >
+<section id="userSection" hidden>
+  <h2>You're signed in</h2>
+  <p>Your account email:</p>
+  <p id="userEmail"></p>
+  <p>Your Vanguard Mark account is ready. Logo submissions will be connected in a later step.</p>
+  <button id="dashboardButton" type="button">Go to Dashboard</button>
+  <button id="logoutButton" type="button" class="secondary">Log out</button>
+</section>
 
-        <button id="submitButton" type="submit">
-          Create account
-        </button>
-      </form>
+<p id="message" role="status" aria-live="polite"></p>
+<a class="back" href="./index.html">Back to Vanguard Mark</a>
 
-      <button id="switchButton" class="secondary" type="button">
-        Already have an account? Log in
-      </button>
-
-      <button id="resetButton" class="secondary" type="button" hidden>
-        Reset password
-      </button>
-    </section>
-
-    <section id="userSection" hidden>
-      <h2>You're signed in</h2>
-
-      <p>Your account email:</p>
-      <p id="userEmail"></p>
-
-      <p>
-        Your Vanguard Mark account is ready. Logo submissions
-        will be connected in a later step.
-      </p>
-
-      <button id="logoutButton" type="button">
-        Log out
-      </button>
-    </section>
-
-    <p id="message" role="status" aria-live="polite"></p>
-
-    <a class="back" href="./index.html">
-      Back to Vanguard Mark
-    </a>
-  </main>
-
-  <script type="module">
+  </main>  <script type="module">
     import {
       auth,
       createUserWithEmailAndPassword,
@@ -222,6 +81,7 @@
 
     let loginMode = false;
     let busy = false;
+    let redirectTimer;
 
     function showMessage(text, error = false) {
       message.textContent = text;
@@ -236,36 +96,28 @@
     }
 
     function updateForm() {
-      formTitle.textContent = loginMode
-        ? "Welcome back"
-        : "Create your account";
-
-      submitButton.textContent = loginMode
-        ? "Log in"
-        : "Create account";
-
-      switchButton.textContent = loginMode
-        ? "Need an account? Sign up"
-        : "Already have an account? Log in";
-
-      passwordInput.autocomplete = loginMode
-        ? "current-password"
-        : "new-password";
-
+      formTitle.textContent = loginMode ? "Welcome back" : "Create your account";
+      submitButton.textContent = loginMode ? "Log in" : "Create account";
+      switchButton.textContent = loginMode ? "Need an account? Sign up" : "Already have an account? Log in";
+      passwordInput.autocomplete = loginMode ? "current-password" : "new-password";
       resetButton.hidden = !loginMode;
       showMessage("");
     }
 
+    function goToDashboard() {
+      window.location.replace("./dashboard.html");
+    }
+
+    document.getElementById("dashboardButton").addEventListener("click", goToDashboard);
+
     switchButton.addEventListener("click", () => {
       if (busy) return;
-
       loginMode = !loginMode;
       updateForm();
     });
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-
       if (busy) return;
 
       const email = emailInput.value.trim();
@@ -276,43 +128,26 @@
 
       try {
         if (loginMode) {
-          await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
-
-          showMessage("Login successful.");
+          await signInWithEmailAndPassword(auth, email, password);
         } else {
-          await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
-
-          showMessage("Your account has been created.");
+          await createUserWithEmailAndPassword(auth, email, password);
         }
+
+        showMessage("Login successful. Opening your dashboard...");
+
+        clearTimeout(redirectTimer);
+        redirectTimer = setTimeout(goToDashboard, 700);
       } catch (error) {
         const messages = {
-          "auth/email-already-in-use":
-            "An account already exists with this email. Try logging in.",
-          "auth/invalid-email":
-            "Please enter a valid email address.",
-          "auth/weak-password":
-            "Choose a stronger password with at least 6 characters.",
-          "auth/invalid-credential":
-            "The email or password is incorrect.",
-          "auth/too-many-requests":
-            "Too many attempts. Please wait and try again.",
-          "auth/network-request-failed":
-            "Network error. Check your internet connection."
+          "auth/email-already-in-use": "An account already exists with this email. Try logging in.",
+          "auth/invalid-email": "Please enter a valid email address.",
+          "auth/weak-password": "Choose a stronger password with at least 6 characters.",
+          "auth/invalid-credential": "The email or password is incorrect.",
+          "auth/too-many-requests": "Too many attempts. Please wait and try again.",
+          "auth/network-request-failed": "Network error. Check your internet connection."
         };
 
-        showMessage(
-          messages[error.code] ||
-          "We couldn't complete that request. Please try again.",
-          true
-        );
+        showMessage(messages[error.code] || "We couldn't complete that request. Please try again.", true);
       } finally {
         setBusy(false);
       }
@@ -328,35 +163,30 @@
       }
 
       if (busy) return;
-
       setBusy(true);
 
       try {
         await sendPasswordResetEmail(auth, email);
-        showMessage(
-          "If an account exists for that address, a password reset email will be sent."
-        );
+        showMessage("If an account exists for that address, a password reset email will be sent.");
       } catch (error) {
-        showMessage(
-          "We couldn't send the reset email. Check the address and try again.",
-          true
-        );
+        showMessage("We couldn't send the reset email. Check the address and try again.", true);
       } finally {
         setBusy(false);
       }
     });
 
-    document.getElementById("logoutButton").addEventListener(
-      "click",
-      async () => {
-        try {
-          await signOut(auth);
-          showMessage("You've logged out.");
-        } catch (error) {
-          showMessage("Couldn't log out. Please try again.", true);
-        }
+    document.getElementById("logoutButton").addEventListener("click", async () => {
+      clearTimeout(redirectTimer);
+
+      try {
+        await signOut(auth);
+        loginMode = true;
+        updateForm();
+        showMessage("You've logged out.");
+      } catch (error) {
+        showMessage("Couldn't log out. Please try again.", true);
       }
-    );
+    });
 
     onAuthStateChanged(auth, (user) => {
       authSection.hidden = !!user;
@@ -364,13 +194,23 @@
 
       if (user) {
         userEmail.textContent = user.email || "Email unavailable";
-        showMessage("You're signed in.");
+
+        const redirectAfterSignIn = sessionStorage.getItem("vanguardRedirectAfterSignIn");
+        if (redirectAfterSignIn === "true") {
+          sessionStorage.removeItem("vanguardRedirectAfterSignIn");
+          goToDashboard();
+          return;
+        }
+
+        showMessage("You're signed in. Opening your dashboard...");
+        clearTimeout(redirectTimer);
+        redirectTimer = setTimeout(goToDashboard, 700);
       } else {
+        clearTimeout(redirectTimer);
         userEmail.textContent = "";
       }
     });
 
     updateForm();
-  </script>
-</body>
+  </script></body>
 </html>
