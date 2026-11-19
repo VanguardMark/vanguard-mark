@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+
+<title>Logo Theme | Vanguard Mark</title>
+
+<meta name="description" content="Explore the Vanguard Mark logo design brief, creative direction, design principles, and submission guidance for the $50,000 logo competition.">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #090909;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+:root {
+  --bg: #090909;
+  --panel: #111111;
+  --panel2: #151515;
+  --line: #292929;
+  --muted: #a5a5a5;
+  --gold: #d8b56d;
+  --white: #ffffff;
+}
+
+.container {
+  width: min(1100px, calc(100% - 40px));
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(9, 9, 9, .95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #222;
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--gold);
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 19px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 12px;
+  color: #c5c5c5;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 20px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: #090909;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .6px;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #e7c987;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: #090909;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 85px;
+  border-bottom: 1px solid #222;
+  background:
+    radial-gradient(
+      ellipse at 85% 25%,
+      rgba(216,181,109,.10),
+      transparent 38%
+    ),
+    linear-gradient(135deg, #090909, #101010);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -110px;
+  top: 35px;
+  width: 370px;
+  height: 370px;
+  border: 1px solid rgba(216,181,109,.14);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 27px;
+  height: 1px;
+  background: var(--gold);
+}
+
+h1 {
+  max-width: 850px;
+  font-size: clamp(43px, 7vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -2.5px;
+  margin: 25px 0;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.hero-copy {
+  max-width: 680px;
+  color: #b1b1b1;
+  font-size: 15px;
+  line-height: 1.95;
+  margin: 0 0 30px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #292929;
+  color: #929292;
+  font-size: 11px;
+}
+
+.hero-note strong {
+  color: var(--gold);
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 75px 0;
+  border-bottom: 1px solid #222;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin: 14px 0;
+}
+
+.section-heading p {
+  max-width: 720px;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+/* BRIEF PANEL */
+
+.brief-panel {
+  background: linear-gradient(130deg, #151515, #0e0e0e);
+  border: 1px solid #383838;
+  border-left: 3px solid var(--gold);
+  padding: 35px;
+}
+
+.brief-label {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.brief-panel h3 {
+  font-size: 23px;
+  margin: 14px 0;
+  line-height: 1.4;
+}
+
+.brief-panel p {
+  color: #b0b0b0;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+/* DESIGN PRINCIPLES */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.card {
+  padding: 27px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  transition: .2s;
+}
+
+.card:hover {
+  border-color: #625237;
+  transform: translateY(-2px);
+}
+
+.card-number {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.card h3 {
+  font-size: 17px;
+  margin: 15px 0 8px;
+}
+
+.card p {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* DESIGN CHECKLIST */
+
+.checklist {
+  border-top: 1px solid #303030;
+}
+
+.check-item {
+  display: flex;
+  gap: 17px;
+  padding: 21px 0;
+  border-bottom: 1px solid #303030;
+}
+
+.check-icon {
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #6e5a33;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.check-item h3 {
+  font-size: 14px;
+  margin: 0 0 5px;
+}
+
+.check-item p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* CREATIVE FREEDOM */
+
+.freedom {
+  padding: 35px;
+  background: #111;
+  border: 1px solid #292929;
+}
+
+.freedom h3 {
+  font-size: 22px;
+  margin: 0 0 13px;
+}
+
+.freedom p {
+  color: #a5a5a5;
+  font-size: 13px;
+  line-height: 2;
+  margin: 0 0 12px;
+}
+
+.freedom p:last-child {
+  margin-bottom: 0;
+}
+
+/* SUBMISSION STEPS */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.step {
+  padding: 23px;
+  background: #111;
+  border: 1px solid #292929;
+}
+
+.step-number {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.step h3 {
+  font-size: 15px;
+  margin: 12px 0 7px;
+}
+
+.step p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.notice {
+  margin-top: 22px;
+  padding: 18px 20px;
+  background: #14120e;
+  border: 1px solid #44391f;
+  color: #c5b99e;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* FINAL CTA */
+
+.cta {
+  padding: 80px 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(216,181,109,.09),
+      transparent 65%
+    );
+}
+
+.cta .eyebrow {
+  justify-content: center;
+}
+
+.cta h2 {
+  max-width: 750px;
+  margin: 20px auto 15px;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.cta p {
+  max-width: 600px;
+  margin: 0 auto 27px;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #292929;
+  padding: 28px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  color: #777;
+  font-size: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #999;
+  font-size: 11px;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .nav {
+    padding: 13px 0;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 0 2px;
+    font-size: 10px;
+  }
+
+  .nav > .btn {
+    padding: 10px 12px;
+    font-size: 9px;
+  }
+
+  .hero {
+    padding: 75px 0 60px;
+  }
+
+  .hero::after {
+    width: 230px;
+    height: 230px;
+    right: -140px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  h1 {
+    letter-spacing: -1.7px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .brief-panel,
+  .freedom {
+    padding: 23px;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="brand" aria-label="Vanguard Mark home">
+      <span class="brand-mark">V</span>
+      <span>VANGUARD MARK</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#how">How It Works</a>
+      <a href="index.html#competition">Competition</a>
+      <a href="competition-terms.html">Official Rules</a>
+    </nav>
+
+    <a href="index.html#submit" class="btn">
+      Submit Your Logo <span>↗</span>
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">Official Creative Direction</div>
+
+    <h1>
+      One vision.<br>
+      Endless possibilities.<br>
+      <span>One Mark.</span>
+    </h1>
+
+    <p class="hero-copy">
+      The Vanguard Mark Logo Theme Guide explains the creative direction
+      behind the competition. Your task is to develop an original,
+      professional logo concept that represents vision, confidence,
+      progress, and distinction.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#creative-brief" class="btn">
+        Read the Creative Brief ↓
+      </a>
+
+      <a href="index.html#submit" class="btn btn-outline">
+        Go to Submission ↗
+      </a>
+    </div>
+
+    <div class="hero-note">
+      <strong>YOUR CHALLENGE</strong>
+      <span>Create an original logo that makes a lasting impression.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE CREATIVE BRIEF -->
+
+<section class="section" id="creative-brief">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">01 / The Brief</div>
+      <h2>What are you being asked to create?</h2>
+      <p>
+        This is the central brief for the Vanguard Mark logo design
+        competition. Read it before developing your concept.
+      </p>
+    </div>
+
+    <div class="brief-panel">
+
+      <div class="brief-label">The Vanguard Mark Logo Challenge</div>
+
+      <h3>Create a distinctive logo identity for Vanguard Mark.</h3>
+
+      <p>
+        Design an original logo concept that expresses a forward-looking
+        vision, confidence, leadership, progress, and creative ambition.
+        The design should feel professional, memorable, and suitable for
+        a brand that wants to establish a strong visual identity.
+      </p>
+
+      <p>
+        Your logo may use typography, a symbol, a monogram, geometric
+        forms, or a combination of these elements. The specific visual
+        approach is your decision. What matters is that the result feels
+        intentional, recognisable, balanced, and original.
+      </p>
+
+      <p>
+        <strong style="color:#d8b56d;">The objective:</strong>
+        Present a logo that communicates a clear identity and can work
+        effectively across digital platforms, printed materials, and
+        other brand applications.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- BRAND DIRECTION -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">02 / Brand Direction</div>
+      <h2>The qualities your design should communicate.</h2>
+      <p>
+        Use these principles to guide your creative decisions. They
+        describe the intended character of the brand, not a requirement
+        to use any particular symbol or illustration.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-number">01 / VISION</div>
+        <h3>Forward-Thinking</h3>
+        <p>
+          Develop a concept that suggests ambition, new possibilities,
+          and a clear sense of direction. Avoid designs that feel
+          generic or lack a recognisable identity.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">02 / CONFIDENCE</div>
+        <h3>Strong and Distinctive</h3>
+        <p>
+          Aim for a confident visual presence. Every shape, letter,
+          and proportion should contribute to the overall identity
+          rather than compete for attention.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">03 / PRECISION</div>
+        <h3>Clean and Considered</h3>
+        <p>
+          Pay attention to spacing, alignment, proportions, and
+          legibility. A professional logo should look deliberate
+          rather than overcrowded or unnecessarily complicated.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-number">04 / RECOGNITION</div>
+        <h3>Memorable and Original</h3>
+        <p>
+          Develop a concept with its own visual character. Avoid
+          copying existing brands or relying on familiar symbols
+          without giving them a distinctive purpose.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- DESIGN CONSIDERATIONS -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">03 / Design Considerations</div>
+      <h2>What makes a strong logo?</h2>
+      <p>
+        Evaluate your design against these practical considerations
+        before submitting your entry.
+      </p>
+    </div>
+
+    <div class="checklist">
+
+      <div class="check-item">
+        <div class="check-icon">01</div>
+        <div>
+          <h3>Clear Recognition</h3>
+          <p>
+            The main idea should be understandable without requiring
+            a long explanation. Aim for a distinctive visual identity
+            that viewers can recognise and remember.
+          </p>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">02</div>
+        <div>
+          <h3>Typography and Readability</h3>
+          <p>
+            If your design includes the Vanguard Mark name or other
+            lettering, ensure the text is legible, well-spaced, and
+            visually consistent with the rest of the concept.
+          </p>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">03</div>
+        <div>
+          <h3>Versatility</h3>
+          <p>
+            Consider how the design would appear on a website,
+            mobile screen, document, social media profile, or
+            printed material.
+          </p>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">04</div>
+        <div>
+          <h3>Colour and Contrast</h3>
+          <p>
+            Choose colours deliberately. Your concept should maintain
+            sufficient contrast and should not depend entirely on
+            special effects to remain recognisable.
+          </p>
+        </div>
+      </div>
+
+      <div class="check-item">
+        <div class="check-icon">05</div>
+        <div>
+          <h3>Originality and Ownership</h3>
+          <p>
+            Submit work you created and have the right to enter.
+            Do not copy another designer's work, reuse protected
+            brand artwork without permission, or misrepresent
+            someone else's design as your own.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CREATIVE FREEDOM -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">04 / Creative Freedom</div>
+      <h2>Your idea. Your interpretation.</h2>
+      <p>
+        The purpose of this brief is to establish a shared direction
+        while leaving room for different creative approaches.
+      </p>
+    </div>
+
+    <div class="freedom">
+
+      <h3>There is no single prescribed visual solution.</h3>
+
+      <p>
+        You are not required to use a particular icon, letterform,
+        shape, colour palette, or layout. You may explore a wordmark,
+        monogram, abstract symbol, geometric composition, or another
+        original approach that communicates the intended brand
+        qualities.
+      </p>
+
+      <p>
+        Black and gold may be explored as a colour direction because
+        they feature in the Vanguard Mark website. However, this guide
+        does not make those colours a mandatory condition of entry.
+      </p>
+
+      <p>
+        Focus on the strength of your concept, the quality of its
+        execution, and the way its elements work together. The goal
+        is not to produce a variation of the website's existing
+        decoration, but to develop a logo with an identity of its own.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SUBMISSION PREPARATION -->
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">05 / Prepare Your Entry</div>
+      <h2>Before you submit.</h2>
+      <p>
+        Follow these steps to prepare a clear, complete submission.
+      </p>
+    </div>
+
+    <div class="steps">
+
+      <article class="step">
+        <div class="step-number">STEP 01</div>
+        <h3>Develop Your Concept</h3>
+        <p>
+          Create an original logo that responds to the creative
+          brief. Review its clarity, originality, and versatility.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">STEP 02</div>
+        <h3>Prepare Your File</h3>
+        <p>
+          The current homepage form accepts PNG, JPG, SVG, and PDF.
+          Prepare a clear, high-quality version of your design in
+          one of these formats.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">STEP 03</div>
+        <h3>Review the Official Rules</h3>
+        <p>
+          Check eligibility, deadlines, judging, ownership, prize
+          conditions, and other applicable requirements before
+          submitting your entry.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong> This page explains the creative
+      direction only. The official competition rules govern
+      eligibility, submission requirements, judging, intellectual
+      property, deadlines, and prize conditions. Any additional
+      file requirements or mandatory design specifications must
+      be confirmed in those rules.
+    </div>
+
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+  <div class="container">
+
+    <div class="eyebrow">The Next Step</div>
+
+    <h2>Bring your vision to Vanguard Mark.</h2>
+
+    <p>
+      You now have the creative direction. Develop your concept,
+      prepare your logo, and review the official rules before
+      proceeding to the submission form.
+    </p>
+
+    <div class="cta-actions">
+
+      <a href="index.html#submit" class="btn">
+        Submit Your Logo ↗
+      </a>
+
+      <a href="competition-terms.html" class="btn btn-outline">
+        Read Official Rules ↗
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+
+    <a href="index.html" class="brand">
+      <span class="brand-mark">V</span>
+      <span>VANGUARD MARK</span>
+    </a>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#competition">Competition</a>
+      <a href="competition-terms.html">Competition Terms</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 Vanguard Mark. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+</body>
+  </html>
