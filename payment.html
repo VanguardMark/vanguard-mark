@@ -4,62 +4,185 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0b0b">
 <title>Secure Entry Payment | Vanguard Mark</title><style>
-*{box-sizing:border-box}
-body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
-header{padding:20px 6%;background:#111;border-bottom:1px solid #40351f}
-.brand{font-size:20px;font-weight:bold;letter-spacing:1px;color:#d8b45a}
-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:15px}
-nav a{color:#d8b45a}
-main{max-width:650px;margin:45px auto;padding:20px}
-.card{background:#151515;border:1px solid #40351f;border-radius:14px;padding:28px}
-h1{font-size:30px;margin-top:0}
-.gold{color:#d8b45a}
-p{color:#bbb;line-height:1.7}
-.summary{background:#0d0d0d;border:1px solid #333;border-radius:9px;padding:18px;margin:22px 0}
-.row{display:flex;justify-content:space-between;gap:15px;padding:10px 0}
-.total{border-top:1px solid #444;margin-top:8px;padding-top:18px;font-size:20px;font-weight:bold}
-button{width:100%;padding:15px;border:0;border-radius:7px;background:#d8b45a;color:#111;font-size:16px;font-weight:bold;cursor:pointer;margin-top:14px}
-button:disabled{opacity:.55;cursor:wait}
-.secondary{background:#292929;color:#fff;border:1px solid #555}
-.notice{font-size:13px;background:#211d13;border-left:3px solid #d8b45a;padding:14px;color:#d8d0bd;line-height:1.6}
-#status{overflow-wrap:anywhere}
-footer{text-align:center;padding:25px;color:#777;font-size:13px}
-</style></head><body>
-<header>
-  <div class="brand">VANGUARD MARK</div>
-  <nav>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #090909;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px 6%;
+  background: #111;
+  border-bottom: 1px solid #40351f;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #d8b45a;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+nav a {
+  color: #d8b45a;
+}
+
+main {
+  max-width: 650px;
+  margin: 45px auto;
+  padding: 20px;
+}
+
+.card {
+  background: #151515;
+  border: 1px solid #40351f;
+  border-radius: 14px;
+  padding: 28px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.gold {
+  color: #d8b45a;
+}
+
+p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.summary {
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 9px;
+  padding: 18px;
+  margin: 22px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.total {
+  border-top: 1px solid #444;
+  margin-top: 8px;
+  padding-top: 18px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  border-radius: 7px;
+  background: #d8b45a;
+  color: #111;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.secondary {
+  background: #292929;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.notice {
+  font-size: 13px;
+  background: #211d13;
+  border-left: 3px solid #d8b45a;
+  padding: 14px;
+  color: #d8d0bd;
+  line-height: 1.6;
+}
+
+#status {
+  overflow-wrap: anywhere;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #777;
+  font-size: 13px;
+}
+</style></head><body><header>
+  <div class="brand">VANGUARD MARK</div>  <nav>
     <a href="./dashboard.html">Dashboard</a>
     <a href="./submit.html">Submit a logo</a>
     <a href="./support.html">Support</a>
   </nav>
 </header><main>
-<section class="card">
-  <h1>Confirm your <span class="gold">entry</span></h1>
-  <p>Review your logo submission before continuing to payment.</p>  <div class="summary">
-    <div class="row">
-      <span>Competition entry</span>
-      <strong>Vanguard Mark</strong>
-    </div>
-    <div class="row">
-      <span>Entry fee</span>
-      <strong>$3.00 USD</strong>
-    </div>
-    <div class="row total">
-      <span>Total</span>
-      <span class="gold">$3.00 USD</span>
-    </div>
-  </div>  <p id="logoTitle">Checking your submission...</p>  <div class="notice">
-    During development, you can use simulation mode to test the payment
-    flow without spending money. A simulated payment is not a real
-    payment and does not qualify as a paid competition entry.
-  </div><button id="payButton" type="button">Continue to PayMeGate</button>
-<button id="testButton" class="secondary" type="button">
-Simulate payment (development only)
+  <section class="card"><h1>Confirm your <span class="gold">entry</span></h1>
+
+<p>Review your logo submission before continuing to payment.</p>
+
+<div class="summary">
+
+  <div class="row">
+    <span>Competition entry</span>
+    <strong>Vanguard Mark</strong>
+  </div>
+
+  <div class="row">
+    <span>Entry fee</span>
+    <strong>$3.00 USD</strong>
+  </div>
+
+  <div class="row total">
+    <span>Total</span>
+    <span class="gold">$3.00 USD</span>
+  </div>
+
+</div>
+
+<p id="logoTitle">Checking your submission...</p>
+
+<div class="notice">
+  Your entry will not be marked as paid until the payment provider
+  verifies the payment. Test payments do not count as real entries.
+</div>
+
+<button id="payButton" type="button">
+  Continue to PayMeGate
 </button>
 
-  <p id="status" role="status" aria-live="polite"></p>
-</section>
-</main><footer>Vanguard Mark · Payment and entry status</footer><script type="module">
+<button id="testButton" class="secondary" type="button">
+  Simulate payment (development only)
+</button>
+
+<p id="status" role="status" aria-live="polite"></p>
+
+  </section>
+</main><footer>
+  Vanguard Mark · Payment and entry status
+</footer><script type="module">
 import { auth, onAuthStateChanged } from "./firebase.js";
 
 const WORKER_URL =
@@ -71,22 +194,39 @@ const status = document.getElementById("status");
 const title = document.getElementById("logoTitle");
 
 let user = null;
+let authReady = false;
 let pending = null;
+let busy = false;
 
 try {
   pending = JSON.parse(
     sessionStorage.getItem("vanguardMarkPendingSubmission") || "null"
   );
-} catch {
+} catch (error) {
   pending = null;
+}
+
+function showStatus(message) {
+  status.textContent = message;
+}
+
+function validateSubmission() {
+  return Boolean(
+    user &&
+    pending &&
+    pending.id &&
+    pending.title &&
+    pending.userId === user.uid
+  );
 }
 
 title.textContent = pending?.title
   ? "Logo: " + pending.title
-  : "No pending logo submission was found.";
+  : "No pending logo submission was found. Please submit your logo first.";
 
 onAuthStateChanged(auth, currentUser => {
   user = currentUser;
+  authReady = true;
 
   if (!currentUser) {
     window.location.href = "./account.html";
@@ -95,61 +235,106 @@ onAuthStateChanged(auth, currentUser => {
 
   if (pending && pending.userId !== currentUser.uid) {
     pending = null;
-    title.textContent = "No valid submission was found.";
+    title.textContent =
+      "No valid submission was found. Please submit your logo again.";
   }
 });
 
 payButton.addEventListener("click", async () => {
-  if (!user || !pending) {
-    status.textContent =
-      "Please sign in again and submit your logo first.";
+  if (busy) return;
+
+  if (!authReady) {
+    showStatus("Checking your account. Please wait.");
     return;
   }
 
+  if (!validateSubmission()) {
+    showStatus(
+      "Please sign in and submit your logo before continuing to payment."
+    );
+    return;
+  }
+
+  if (!user.email) {
+    showStatus("Your account needs a valid email address.");
+    return;
+  }
+
+  busy = true;
   payButton.disabled = true;
-  status.textContent = "Requesting a checkout session...";
+  testButton.disabled = true;
+
+  showStatus("Connecting to the payment service...");
 
   try {
     const response = await fetch(WORKER_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({
         amount: 3,
+        currency: "USD",
         email: user.email,
-        fullName: user.displayName || user.email.split("@")[0]
+        fullName: user.displayName || user.email.split("@")[0],
+        submissionId: pending.id
       })
     });
 
-    const result = await response.json();
+    const result = await response.json().catch(() => ({}));
 
-    if (!response.ok || !result.success || !result.checkoutUrl) {
+    if (!response.ok) {
       throw new Error(
-        result.error || "Unable to create a checkout session."
+        result.error ||
+        "The payment service returned HTTP " + response.status + "."
       );
     }
 
-    // A checkout URL is not proof that payment has been received.
+    if (!result.success || !result.checkoutUrl) {
+      throw new Error(
+        result.error ||
+        "No checkout URL was returned. Check the Cloudflare Worker configuration."
+      );
+    }
+
+    const checkoutURL = new URL(result.checkoutUrl);
+
+    if (checkoutURL.protocol !== "https:") {
+      throw new Error(
+        "The payment service returned an insecure checkout address."
+      );
+    }
+
     sessionStorage.setItem(
       "vanguardMarkCheckoutOrder",
       JSON.stringify({
         submissionId: pending.id,
-        orderUUID: result.orderUUID,
-        status: result.status || "pending"
+        orderUUID: result.orderUUID || null,
+        status: "pending",
+        createdAt: new Date().toISOString()
       })
     );
 
-    window.location.href = result.checkoutUrl;
+    showStatus("Checkout created. Redirecting...");
+
+    window.location.assign(checkoutURL.href);
+
   } catch (error) {
-    status.textContent =
-      error.message || "Checkout failed. Please try again.";
+    showStatus(
+      error.message || "Unable to start checkout. Please try again."
+    );
+
+    busy = false;
     payButton.disabled = false;
+    testButton.disabled = false;
   }
 });
 
 testButton.addEventListener("click", () => {
-  if (!user || !pending) {
-    status.textContent =
-      "Please sign in and prepare a logo submission first.";
+  if (!authReady || !validateSubmission()) {
+    showStatus(
+      "Please sign in and prepare a valid logo submission first."
+    );
     return;
   }
 
@@ -167,10 +352,9 @@ testButton.addEventListener("click", () => {
     JSON.stringify(demoEntry)
   );
 
-  status.textContent =
-    "Simulation complete. No money was charged. This is not a paid entry.";
-
-  testButton.disabled = true;
+  showStatus(
+    "Simulation complete. No money was charged. This is not a paid entry."
+  );
 });
 </script></body>
-  </html>
+</html>
