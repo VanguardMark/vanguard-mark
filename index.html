@@ -3,385 +3,1237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
-<title>Vanguard Mark | $50,000 Logo Competition</title>
-<meta name="description" content="Discover Vanguard Mark, a logo design competition featuring a $50,000 grand prize. Explore the competition, submit your design, and follow your entry status.">
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="Vanguard Mark is a premium logo design competition platform. Discover the competition, explore the rules, and prepare your original design.">
+<title>Vanguard Mark — A New Standard in Design</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --bg:#090e1c;
-  --panel:#111a2c;
-  --gold:#e5bd68;
-  --text:#f7f8fc;
-  --muted:#a8b1c5;
-  --line:rgba(255,255,255,.1);
+  --bg: #080d18;
+  --bg-soft: #0c1322;
+  --panel: #101a2b;
+  --panel-light: #152137;
+  --gold: #d8b46a;
+  --gold-light: #f0d69b;
+  --white: #f7f7f5;
+  --muted: #a0aabd;
+  --line: rgba(255,255,255,.10);
+  --gold-line: rgba(216,180,106,.28);
+  --serif: Georgia, "Times New Roman", serif;
 }
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.6;
+  margin: 0;
+  color: var(--white);
+  background: var(--bg);
+  font-family: "DM Sans", Arial, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
-a {color:inherit;text-decoration:none}
-button,input,textarea {font:inherit}
-.container {width:min(1120px,90%);margin:auto}
-header {
-  position:sticky;top:0;z-index:10;
-  background:rgba(9,14,28,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 80% 12%, rgba(216,180,106,.055), transparent 35%),
+    radial-gradient(ellipse at 0% 50%, rgba(40,68,112,.10), transparent 35%);
 }
-nav {
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:18px;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.brand {display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:1px}
-.brand-icon {
-  width:39px;height:39px;border:1px solid var(--gold);
-  color:var(--gold);display:grid;place-items:center;
-  font-weight:900;font-size:20px;border-radius:10px;
+
+button,
+input,
+textarea {
+  font: inherit;
 }
-.nav-links {display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* NAVIGATION */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,13,24,.91);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar {
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 25px;
+  position: relative;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(216,180,106,.32);
+}
+
+.brand-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-name span {
+  display: block;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links > a:not(.btn) {
+  color: #c0c7d3;
+  font-size: 13px;
+  transition: color .2s;
+}
+
+.nav-links > a:not(.btn):hover {
+  color: var(--gold-light);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .btn {
-  display:inline-flex;justify-content:center;align-items:center;
-  gap:8px;padding:13px 19px;border-radius:8px;
-  border:1px solid transparent;font-weight:700;cursor:pointer;
-  transition:.2s;
+  min-height: 47px;
+  padding: 12px 21px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  transition:
+    background .25s,
+    border-color .25s,
+    color .25s,
+    transform .25s;
 }
-.btn:hover {transform:translateY(-2px)}
-.btn-gold {background:var(--gold);color:#15120b}
-.btn-outline {border-color:var(--line);color:white;background:transparent}
-.hero {padding:95px 0 75px;overflow:hidden}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #12110d;
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);
+}
+
+.btn-outline {
+  border-color: rgba(255,255,255,.2);
+  color: var(--white);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.btn-dark {
+  border-color: var(--gold-line);
+  background: rgba(216,180,106,.06);
+  color: var(--gold-light);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.mobile-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  color: var(--white);
+  background: transparent;
+  font-size: 23px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  padding: 108px 0 94px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "V";
+  position: absolute;
+  right: -25px;
+  top: 8px;
+  color: rgba(216,180,106,.025);
+  font-family: var(--serif);
+  font-size: clamp(400px, 58vw, 780px);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  z-index: 1;
+}
+
 .eyebrow {
-  display:inline-flex;gap:9px;align-items:center;
-  color:var(--gold);font-size:12px;letter-spacing:2px;
-  text-transform:uppercase;font-weight:800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
-.dot {width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.hero-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
-h1 {font-size:clamp(43px,6vw,76px);line-height:1.04;letter-spacing:-3px;margin:22px 0}
-h1 span {color:var(--gold)}
-.hero p {max-width:580px;color:var(--muted);font-size:17px}
-.actions {display:flex;gap:12px;flex-wrap:wrap;margin:29px 0}
-.small-note {font-size:12px!important;color:#8490a7!important}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero h1 {
+  margin: 30px 0 25px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(52px, 6.3vw, 82px);
+  line-height: 1.04;
+  letter-spacing: -3px;
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.hero-copy {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 33px;
+}
+
+.hero-footnote {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #7f8b9f;
+  font-size: 11px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* PRIZE FEATURE */
+
+.prize-wrap {
+  position: relative;
+  padding: 15px 0;
+}
+
 .prize-card {
-  padding:34px;border-radius:18px;
-  border:1px solid rgba(229,189,104,.3);
-  background:radial-gradient(ellipse at top right,rgba(229,189,104,.12),transparent 60%),var(--panel);
-  box-shadow:0 25px 90px rgba(0,0,0,.24);
+  padding: 36px;
+  border: 1px solid var(--gold-line);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(216,180,106,.12), transparent 50%),
+    linear-gradient(145deg, rgba(20,31,49,.98), rgba(11,18,31,.98));
+  position: relative;
 }
-.prize-label {font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
-.prize {font-size:clamp(42px,5vw,62px);font-weight:850;color:var(--gold);letter-spacing:-2px;margin:10px 0}
-.prize-card hr {border:0;border-top:1px solid var(--line);margin:24px 0}
-.stat-row {display:flex;justify-content:space-between;gap:15px;font-size:14px;margin:12px 0}
-.stat-row span:first-child {color:var(--muted)}
-section {padding:75px 0}
-.section-heading {max-width:650px;margin-bottom:35px}
-.section-heading h2 {font-size:clamp(29px,4vw,43px);letter-spacing:-1px;line-height:1.15;margin:13px 0}
-.section-heading p {color:var(--muted)}
-.cards {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card {
-  padding:25px;border:1px solid var(--line);border-radius:13px;
-  background:var(--panel);
+
+.prize-card::before,
+.prize-card::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
 }
-.card-number {color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px}
-.card h3 {margin:15px 0 8px}
-.card p {margin:0;color:var(--muted);font-size:14px}
-.upload-section {background:#0c1323;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.upload-layout {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.upload-box {border:1px solid var(--line);background:var(--panel);padding:26px;border-radius:14px}
-label {display:block;margin:16px 0 7px;font-size:13px;font-weight:700}
-input,textarea {
-  width:100%;padding:13px 14px;border-radius:8px;
-  background:#0a1020;color:white;border:1px solid #29344a;
-  outline:none;
+
+.prize-card::before {
+  top: -5px;
+  left: -5px;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
 }
-input:focus,textarea:focus {border-color:var(--gold)}
-input[type=file] {padding:12px}
-.preview {
-  margin-top:15px;min-height:100px;border:1px dashed #39445a;
-  border-radius:8px;display:grid;place-items:center;color:var(--muted);
-  padding:12px;overflow:hidden;
+
+.prize-card::after {
+  right: -5px;
+  bottom: -5px;
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
 }
-.preview img {max-width:100%;max-height:240px;object-fit:contain}
-.notice {padding:13px;background:rgba(229,189,104,.08);border:1px solid rgba(229,189,104,.2);border-radius:8px;color:#e9d9b6;font-size:12px;margin:16px 0}
-.faq {max-width:800px}
-details {padding:20px 0;border-bottom:1px solid var(--line)}
-summary {cursor:pointer;font-weight:700}
-details p {color:var(--muted);font-size:14px}
-footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-.footer-row {display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a {color:var(--gold)}
+
+.prize-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.prize-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.prize-index {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 15px;
+}
+
+.prize-amount {
+  margin: 22px 0 0;
+  color: var(--gold-light);
+  font-family: var(--serif);
+  font-size: clamp(49px, 5.7vw, 75px);
+  line-height: 1.12;
+  letter-spacing: -3px;
+}
+
+.prize-caption {
+  color: #d0d5df;
+  font-size: 13px;
+  margin: 13px 0 28px;
+}
+
+.prize-rule {
+  height: 1px;
+  background: var(--line);
+  margin: 25px 0;
+}
+
+.prize-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  font-size: 12px;
+}
+
+.prize-detail span {
+  color: var(--muted);
+}
+
+.prize-detail strong {
+  font-weight: 600;
+  text-align: right;
+}
+
+.prize-disclaimer {
+  margin-top: 24px;
+  padding: 12px 14px;
+  border-left: 2px solid var(--gold);
+  background: rgba(216,180,106,.055);
+  color: #c0b79f;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* TRUST STRIP */
+
+.trust-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.012);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 27px 28px;
+  border-right: 1px solid var(--line);
+}
+
+.trust-item:first-child {
+  padding-left: 0;
+}
+
+.trust-item:last-child {
+  border-right: 0;
+}
+
+.trust-number {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 27px;
+}
+
+.trust-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.trust-subtitle {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* GENERAL SECTIONS */
+
+.section {
+  padding: 105px 0;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  margin: 20px 0 17px;
+  font-family: var(--serif);
+  font-size: clamp(36px,4.7vw,55px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1.4px;
+}
+
+.section-heading h2 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.section-heading p {
+  max-width: 550px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.center-heading {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-heading .eyebrow {
+  justify-content: center;
+}
+
+.center-heading .section-heading p,
+.center-heading p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HOW IT WORKS */
+
+.process-section {
+  background: linear-gradient(180deg, rgba(12,19,34,.35), rgba(12,19,34,.8));
+  border-bottom: 1px solid var(--line);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 22px;
+}
+
+.process-card {
+  min-height: 255px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(18,29,47,.85), rgba(10,17,29,.9));
+  position: relative;
+  transition: border-color .3s, transform .3s;
+}
+
+.process-card:hover {
+  border-color: var(--gold-line);
+  transform: translateY(-5px);
+}
+
+.process-number {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 33px;
+}
+
+.process-card h3 {
+  margin: 29px 0 11px;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.process-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* SUBMISSION */
+
+.submission-section {
+  background: var(--bg);
+}
+
+.submission-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.submission-intro {
+  position: sticky;
+  top: 125px;
+}
+
+.submission-intro .section-heading {
+  margin-bottom: 25px;
+}
+
+.submission-points {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+.submission-points li {
+  display: flex;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+  color: #c4cbd6;
+  font-size: 12px;
+}
+
+.submission-points li span {
+  color: var(--gold);
+}
+
+.submission-form {
+  padding: 35px;
+  border: 1px solid var(--gold-line);
+  background: linear-gradient(145deg, #111b2c, #0c1423);
+}
+
+.form-heading {
+  padding-bottom: 23px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.form-heading h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.form-heading p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+.form-group label,
+.agreement-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #dce0e7;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.form-group input,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #2b374b;
+  border-radius: 2px;
+  background: #0a1120;
+  color: var(--white);
+  padding: 14px 15px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #69758a;
+}
+
+.form-group textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.form-group input[type="file"] {
+  padding: 12px;
+  font-size: 11px;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 9px 12px;
+  border: 0;
+  background: var(--panel-light);
+  color: var(--gold-light);
+  cursor: pointer;
+}
+
+.image-preview {
+  display: none;
+  min-height: 150px;
+  margin-top: 13px;
+  padding: 12px;
+  border: 1px dashed #39445a;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+.agreement-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 24px 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.agreement-label input {
+  accent-color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.form-note {
+  color: #8d99ad;
+  font-size: 10px;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+
+/* RULES */
+
+.rules-section {
+  background: #0b1220;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 85px;
+}
+
+.rules-list {
+  border-top: 1px solid var(--line);
+}
+
+.rule-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 15px;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.rule-number {
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.rule-item h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rule-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* FAQ */
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 85px;
+}
+
+.faq-list details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-list details:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.faq-list summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list summary::after {
+  content: "+";
+  color: var(--gold);
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.faq-list details[open] summary::after {
+  content: "−";
+}
+
+.faq-list details p {
+  padding: 0 28px 20px 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: #060a12;
+  border-top: 1px solid var(--line);
+  padding: 62px 0 24px;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr .7fr;
+  gap: 60px;
+  padding-bottom: 48px;
+}
+
+.footer-description {
+  max-width: 310px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.footer-column h3 {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-column a {
+  display: block;
+  width: fit-content;
+  margin: 12px 0;
+  color: #aeb7c6;
+  font-size: 12px;
+  transition: color .2s;
+}
+
+.footer-column a:hover {
+  color: var(--gold-light);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: #7f8a9d;
+  font-size: 10px;
+}
+
+.footer-bottom a {
+  color: #b9c0cc;
+}
+
+/* MODAL */
+
 .modal {
-  display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
-  z-index:30;align-items:center;justify-content:center;padding:20px;
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.82);
+  backdrop-filter: blur(8px);
 }
-.modal-content {width:min(450px,100%);background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:25px}
-.modal-content h2 {margin-top:0}
-.modal-content p {color:var(--muted);font-size:14px}
-.close {float:right;background:none;border:0;color:white;font-size:24px;cursor:pointer}
-@media(max-width:800px) {
- .hero-grid,.upload-layout {grid-template-columns:1fr}
- .hero {padding-top:60px}
- .cards {grid-template-columns:1fr}
- .nav-links {gap:12px}
- .nav-links a:not(.btn) {display:none}
- h1 {letter-spacing:-2px}
+
+.modal-content {
+  width: min(460px,100%);
+  padding: 34px;
+  border: 1px solid var(--gold-line);
+  background: #101a2b;
+  box-shadow: 0 25px 100px rgba(0,0,0,.4);
+}
+
+.modal-close {
+  float: right;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.modal-content h2 {
+  clear: both;
+  padding-top: 20px;
+  font-family: var(--serif);
+  font-size: 31px;
+  font-weight: 400;
+}
+
+.modal-content p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.modal-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.modal-note {
+  padding: 12px;
+  border-left: 2px solid var(--gold);
+  background: rgba(216,180,106,.06);
+  color: #c9c0ad;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-copy-block {
+  animation: fadeUp .8s ease both;
+}
+
+.prize-wrap {
+  animation: fadeUp 1s .12s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .nav-links {
+    gap: 17px;
+  }
+
+  .hero-grid {
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px,7vw,68px);
+  }
+
+  .submission-grid,
+  .rules-grid,
+  .faq-layout {
+    gap: 45px;
+  }
+
+  .footer-main {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 36px);
+  }
+
+  .navbar {
+    min-height: 72px;
+  }
+
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+  }
+
+  .brand-name {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .mobile-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    padding: 22px 22px 26px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+    background: #0a1120;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links > a:not(.btn) {
+    display: block;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links .btn {
+    margin-top: 15px;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 72px 0 60px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero h1 {
+    margin-top: 25px;
+    font-size: clamp(48px,12vw,70px);
+    letter-spacing: -2px;
+  }
+
+  .hero-copy {
+    font-size: 14px;
+  }
+
+  .prize-wrap {
+    max-width: 510px;
+  }
+
+  .prize-card {
+    padding: 27px;
+  }
+
+  .prize-amount {
+    font-size: clamp(54px,14vw,72px);
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item,
+  .trust-item:first-child {
+    padding: 19px 4px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .trust-item:last-child {
+    border-bottom: 0;
+  }
+
+  .trust-number {
+    width: 42px;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(35px,9vw,46px);
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .process-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .process-card h3 {
+    margin-top: 16px;
+  }
+
+  .submission-grid,
+  .rules-grid,
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .submission-intro {
+    position: static;
+  }
+
+  .submission-form {
+    padding: 23px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 25px;
+  }
+
+  .footer-brand-column {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand-name {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .prize-card {
+    padding: 21px;
+  }
+
+  .submission-form {
+    padding: 18px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand-column {
+    grid-column: auto;
+  }
 }
 </style>
 </head>
+
 <body>
-<header>
+
+<header class="site-header">
   <div class="container">
-    <nav>
-      <a class="brand" href="index.html">
-        <span class="brand-icon">V</span>
-        <span>VANGUARD <span style="color:var(--gold)">MARK</span></span>
+    <nav class="navbar" aria-label="Main navigation">
+
+      <a class="brand" href="index.html" aria-label="Vanguard Mark home">
+        <span class="brand-mark">V</span>
+        <span class="brand-name">VANGUARD <span>MARK</span></span>
       </a>
-      <div class="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#competition">Competition</a>
+
+      <button
+        class="mobile-toggle"
+        id="mobileToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#how">The Process</a>
+        <a href="#competition">The Competition</a>
+        <a href="#rules">Guidelines</a>
         <a href="dashboard.html">Dashboard</a>
-        <a class="btn btn-outline" href="account.html">Sign in</a>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="hero" id="competition">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> THE DESIGN CHALLENGE</div>
-        <h1>One design.<br>A bold vision.<br><span>$50,000.</span></h1>
-        <p>
-          Every great brand starts with an idea. Bring yours to the table
-          and showcase your creativity in the Vanguard Mark logo competition.
-        </p>
-        <div class="actions">
-          <a href="#submit" class="btn btn-gold">Submit Your Logo →</a>
-          <a href="#how" class="btn btn-outline">Discover how it works</a>
-        </div>
-        <p class="small-note">Review the official competition rules, eligibility requirements and winner-selection terms before entering.</p>
-      </div>
-      <div class="prize-card">
-        <div class="prize-label">Advertised grand prize</div>
-        <div class="prize">$50,000</div>
-        <p>One winning design. A chance to make your mark.</p>
-        <hr>
-        <div class="stat-row"><span>Entry fee</span><strong>$3 per entry</strong></div>
-        <div class="stat-row"><span>Submission format</span><strong>Digital logo design</strong></div>
-        <div class="stat-row"><span>Entry status</span><strong>Subject to verification</strong></div>
-        <div class="notice">The prize is an advertised target, not a guarantee of available funds. Paid entries must not open until the prize funding, rules and applicable legal requirements are verified.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">THE PROCESS</div>
-        <h2>Your idea deserves a place at the table.</h2>
-        <p>A simple submission journey, designed to keep the process clear at every stage.</p>
-      </div>
-      <div class="cards">
-        <article class="card"><div class="card-number">STEP 01</div><h3>Create your account</h3><p>Set up your profile so your submission and entry details can be associated with you.</p></article>
-        <article class="card"><div class="card-number">STEP 02</div><h3>Upload your design</h3><p>Share an original logo design in a supported image format and provide its details.</p></article>
-        <article class="card"><div class="card-number">STEP 03</div><h3>Review your entry</h3><p>Check the competition terms and payment details. Entries require verified payment before activation.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="upload-section" id="submit">
-    <div class="container upload-layout">
-      <div>
-        <div class="eyebrow">MAKE YOUR MARK</div>
-        <div class="section-heading">
-          <h2>Bring your vision to life.</h2>
-          <p>Start by preparing your logo design. You'll be able to preview your image before continuing.</p>
-        </div>
-        <div class="notice">This initial version previews your logo locally in your browser. It does not upload files to a server, create accounts, charge payments or confirm competition entries.</div>
+        <a class="btn btn-outline" href="account.html">Sign In <span>↗</span></a>
       </div>
 
-      <form class="upload-box" id="logoForm">
-        <h3>Logo submission</h3>
-        <p class="small-note">Prepare your design details below.</p>
-
-        <label for="designTitle">Design title</label>
-        <input id="designTitle" name="designTitle" maxlength="100" required placeholder="Give your design a name">
-
-        <label for="designDescription">About your design</label>
-        <textarea id="designDescription" name="designDescription" maxlength="1000" placeholder="Tell us a little about your idea"></textarea>
-
-        <label for="logoFile">Upload logo image</label>
-        <input id="logoFile" name="logoFile" type="file" accept="image/png,image/jpeg,image/webp" required>
-
-        <div class="preview" id="preview">Your logo preview will appear here.</div>
-
-        <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400">
-          <input type="checkbox" id="agree" required style="width:auto;margin-top:5px">
-          <span>I confirm that this is my design or that I have permission to submit it, and I agree to review the official competition terms.</span>
-        </label>
-
-        <button class="btn btn-gold" type="submit" style="width:100%;margin-top:16px">Continue to entry details →</button>
-        <p class="small-note">Demo only: no payment will be taken and no submission will be delivered.</p>
-      </form>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">CLEAR EXPECTATIONS</div>
-        <h2>Competition information</h2>
-        <p>Participants should understand how entries are assessed and how the prize is awarded before paying an entry fee.</p>
-      </div>
-      <div class="cards">
-        <article class="card"><h3>Original work</h3><p>Submit work you created or have permission to use. Do not submit logos that infringe another person's rights.</p></article>
-        <article class="card"><h3>Transparent rules</h3><p>Eligibility, deadlines, judging criteria, refunds and winner selection must be published before paid entry opens.</p></article>
-        <article class="card"><h3>Payment security</h3><p>Entry payments should only be confirmed after the payment provider verifies the transaction.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container faq">
-      <div class="eyebrow">HELP CENTRE</div>
-      <h2>Frequently asked questions</h2>
-      <details><summary>How much does an entry cost?</summary><p>The proposed entry fee is $3. Real payments are not enabled in this demonstration.</p></details>
-      <details><summary>How do I know my entry has been received?</summary><p>A live version should provide an account dashboard and a unique submission reference after the payment and submission have been verified.</p></details>
-      <details><summary>How is the winner selected?</summary><p>The final rules must explain whether selection is based on judging, public voting or another lawful method. The live competition must not accept paid entries until those rules are finalized.</p></details>
-      <details><summary>How can I contact support?</summary><p>Use the official support email published by Vanguard Mark once the address has been configured. No unverified contact details are displayed here.</p></details>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container footer-row">
-    <div><strong style="color:white">VANGUARD MARK</strong><br>Ideas that make a mark.</div>
-    <div>Competition terms · Privacy · Refund policy</div>
-    <div>© <span id="year"></span> Vanguard Mark. All rights reserved.</div>
-  </div>
-</footer>
-
-<div class="modal" id="accountModal">
-  <div class="modal-content">
-    <button class="close" onclick="closeModal('accountModal')" aria-label="Close">&times;</button>
-    <h2>Welcome to Vanguard Mark</h2>
-    <p>Account registration and sign-in will be available when secure authentication is connected.</p>
-    <a class="btn btn-gold" href="account.html" style="width:100%">Open account page →</a>
-  </div>
-</div>
-
-<div class="modal" id="entryModal">
-  <div class="modal-content">
-    <button class="close" onclick="closeModal('entryModal')" aria-label="Close">&times;</button>
-    <h2>Design prepared</h2>
-    <p id="entryMessage">Your design details are ready for the next step.</p>
-    <div class="notice">Demo only: your logo has not been uploaded to a server and no competition entry or payment has been created.</div>
-    <a class="btn btn-gold" href="payment.html" style="width:100%;display:flex">Continue to payment →</a>
-  </div>
-</div>
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-function openModal(id) {
-  document.getElementById(id).style.display = 'flex';
-}
-
-function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
-}
-
-const fileInput = document.getElementById('logoFile');
-const preview = document.getElementById('preview');
-let previewUrl = null;
-
-fileInput.addEventListener('change', function() {
-  const file = this.files && this.files[0];
-
-  if (!file) {
-    preview.textContent = 'Your logo preview will appear here.';
-    return;
-  }
-
-  if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
-    preview.textContent = 'Please select a PNG, JPEG or WebP image.';
-    this.value = '';
-    return;
-  }
-
-  if (file.size > 5 * 1024 * 1024) {
-    preview.textContent = 'Please choose an image smaller than 5 MB.';
-    this.value = '';
-    return;
-  }
-
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
-
-  previewUrl = URL.createObjectURL(file);
-  preview.innerHTML = '';
-
-  const image = document.createElement('img');
-  image.src = previewUrl;
-  image.alt = 'Preview of your logo design';
-  preview.appendChild(image);
-});
-
-document.getElementById('logoForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  if (!this.reportValidity()) return;
-
-  const title = document.getElementById('designTitle').value.trim();
-  const description = document.getElementById('designDescription').value.trim();
-  const file = fileInput.files && fileInput.files[0];
-
-  if (!file) {
-    alert('Please select your logo image first.');
-    return;
-  }
-
-  /*
-    Save the text details and image data in this browser so the
-    payment page can read them if it is configured to do so.
-    This is not a server upload or a verified competition entry.
-  */
-  const reader = new FileReader();
-
-  reader.onload = function() {
-    try {
-      const entry = {
-        title: title,
-        description: description,
-        fileName: file.name,
-        fileType: file.type,
-        imageData: reader.result,
-        preparedAt: new Date().toISOString(),
-        status: 'prepared_not_submitted'
-      };
-
-      sessionStorage.setItem('vanguardMarkEntry', JSON.stringify(entry));
-
-      document.getElementById('entryMessage').textContent =
-        'Your design "' + title +
-        '" is prepared. Continue to the payment page to review the next step. No payment or official entry has been confirmed.';
-
-      openModal('entryModal');
-    } catch (error) {
-      alert('The design could not be prepared in browser storage. Please try a smaller image.');
-    }
-  };
-
-  reader.onerror = function() {
-    alert('Unable to read the selected image. Please try again.');
-  };
-
-  reader.readAsDataURL(file);
-});
-</script>
-</body>
-        </html>
+  </nav>
