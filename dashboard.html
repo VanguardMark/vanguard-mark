@@ -175,17 +175,6 @@
       cursor: not-allowed;
     }
 
-    .notice {
-      margin-top: 25px;
-      padding: 18px;
-      background: #17150f;
-      border-left: 3px solid #d8b45a;
-      color: #c9c0aa;
-      font-size: 14px;
-      line-height: 1.7;
-      overflow-wrap: anywhere;
-    }
-
     .status-box {
       margin-top: 20px;
       padding: 15px;
@@ -321,12 +310,6 @@
 
       <p id="userEmail">Loading account...</p>
 
-      <p class="muted">
-        Your account is signed in. Competition entries must be
-        submitted and paid for separately. Signing in does not
-        automatically submit a logo or confirm an entry payment.
-      </p>
-
       <button
         class="button secondary"
         id="logoutButton"
@@ -389,24 +372,6 @@
         </article>
 
         <article class="card">
-          <h3>Account security</h3>
-
-          <p>
-            Request a password reset email for your signed-in account.
-            Follow the instructions sent to your registered email
-            address to change your password securely.
-          </p>
-
-          <button
-            class="button secondary"
-            id="resetButton"
-            type="button"
-          >
-            Reset password
-          </button>
-        </article>
-
-        <article class="card">
           <h3>Prize withdrawals</h3>
 
           <p>
@@ -451,14 +416,6 @@
       </div>
     </section>
 
-    <div class="notice">
-      <strong>Payment security:</strong>
-      Starting checkout does not mean your payment has succeeded.
-      An entry must remain pending until the backend verifies the
-      actual payment with the payment provider. A browser message
-      or screenshot alone is not proof of a completed payment.
-    </div>
-
     <section
       class="status-box"
       aria-labelledby="activityHeading"
@@ -502,10 +459,6 @@
       onAuthStateChanged
     } from "./firebase.js";
 
-    import {
-      sendPasswordResetEmail
-    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-
     const dashboard = document.getElementById("dashboard");
     const loading = document.getElementById("loading");
     const userEmail = document.getElementById("userEmail");
@@ -516,9 +469,6 @@
 
     const submissionsButton =
       document.getElementById("submissionsButton");
-
-    const resetButton =
-      document.getElementById("resetButton");
 
     const withdrawButton =
       document.getElementById("withdrawButton");
@@ -680,71 +630,6 @@
           "This does not prove that no submission exists. " +
           "A permanent submission history requires a connected database."
         );
-      }
-    );
-
-    resetButton.addEventListener(
-      "click",
-      async () => {
-        if (!currentUser || !currentUser.email) {
-          showStatus(
-            "We couldn't find an email address for your signed-in account."
-          );
-          return;
-        }
-
-        const email = currentUser.email;
-
-        setButtonBusy(
-          resetButton,
-          true,
-          "Sending request...",
-          "Reset password"
-        );
-
-        try {
-          await sendPasswordResetEmail(
-            auth,
-            email
-          );
-
-          showStatus(
-            "If the request succeeds, a password reset email will be sent " +
-            "to your registered account address. Check your inbox and spam folder."
-          );
-        } catch (error) {
-          console.error(
-            "Password reset request failed:",
-            error
-          );
-
-          if (
-            error.code === "auth/too-many-requests"
-          ) {
-            showStatus(
-              "Too many password reset requests were made. Please wait before trying again."
-            );
-          } else if (
-            error.code === "auth/network-request-failed"
-          ) {
-            showStatus(
-              "A network error prevented the password reset request. " +
-              "Check your internet connection and try again."
-            );
-          } else {
-            showStatus(
-              "Unable to send a reset email right now. " +
-              "Check your Firebase email settings and try again later."
-            );
-          }
-        } finally {
-          setButtonBusy(
-            resetButton,
-            false,
-            "Sending request...",
-            "Reset password"
-          );
-        }
       }
     );
 
