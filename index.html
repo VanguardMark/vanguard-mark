@@ -1,97 +1,331 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vanguard Mark | Logo Competition</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<title>Vanguard Mark | $50,000 Logo Competition</title>
+<meta name="description" content="Discover Vanguard Mark, a logo design competition featuring a $50,000 grand prize. Explore the competition, submit your design, and follow your entry status.">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b1020;color:#f8f7f2;font-family:Arial,sans-serif;line-height:1.7}
-header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #293146}
-.brand{display:flex;align-items:center;gap:10px;font-weight:bold;letter-spacing:1px}
-.logo{border:1px solid #d7b56d;color:#d7b56d;padding:5px 12px;font:30px Georgia}
-button,.btn{padding:12px 18px;border:1px solid #d7b56d;background:#d7b56d;color:#111827;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
-nav{display:none;background:#131d31;padding:15px}
-nav a{display:block;padding:10px;color:#f2d99c;text-decoration:none}
-nav.show{display:block}
-.hero{padding:75px 7%;background:radial-gradient(ellipse at top right,#28334a,#0b1020 65%)}
-.tag{color:#d7b56d;letter-spacing:3px;font-size:12px}
-h1{font:clamp(42px,8vw,70px)/1.1 Georgia,serif;margin:20px 0}
-h1 span{color:#f2d99c;font-style:italic}
-p{color:#a9b0c0}
-.hero p{max-width:550px;font-size:16px}
-.btn2{background:transparent;border-color:#596176;color:white;margin:8px 0 0 8px}
-.prize{margin-top:45px;padding:30px;border:1px solid #8c7548;text-align:center;max-width:420px}
-.amount{font:55px Georgia;color:#f2d99c;margin:10px}
-section{padding:60px 7%}
-h2{font:36px Georgia,serif}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{padding:22px;background:#131d31;border:1px solid #293146}
-.card strong{color:#d7b56d;font-size:23px}
-.dark{background:#10192b}
-.notice{border-left:3px solid #d7b56d;padding:14px;background:#131d31}
-footer{padding:30px 7%;background:#070b14;border-top:1px solid #293146;font-size:12px}
-footer a{color:#f2d99c;margin-right:14px}
-@media(max-width:650px){.grid{grid-template-columns:1fr}.hero{padding-top:55px}h2{font-size:30px}.prize{padding:24px}}
+:root {
+  --bg:#090e1c;
+  --panel:#111a2c;
+  --gold:#e5bd68;
+  --text:#f7f8fc;
+  --muted:#a8b1c5;
+  --line:rgba(255,255,255,.1);
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.6;
+}
+a {color:inherit;text-decoration:none}
+button,input,textarea {font:inherit}
+.container {width:min(1120px,90%);margin:auto}
+header {
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,14,28,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+nav {
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:18px;
+}
+.brand {display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:1px}
+.brand-icon {
+  width:39px;height:39px;border:1px solid var(--gold);
+  color:var(--gold);display:grid;place-items:center;
+  font-weight:900;font-size:20px;border-radius:10px;
+}
+.nav-links {display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+.btn {
+  display:inline-flex;justify-content:center;align-items:center;
+  gap:8px;padding:13px 19px;border-radius:8px;
+  border:1px solid transparent;font-weight:700;cursor:pointer;
+  transition:.2s;
+}
+.btn:hover {transform:translateY(-2px)}
+.btn-gold {background:var(--gold);color:#15120b}
+.btn-outline {border-color:var(--line);color:white;background:transparent}
+.hero {padding:95px 0 75px;overflow:hidden}
+.eyebrow {
+  display:inline-flex;gap:9px;align-items:center;
+  color:var(--gold);font-size:12px;letter-spacing:2px;
+  text-transform:uppercase;font-weight:800;
+}
+.dot {width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+h1 {font-size:clamp(43px,6vw,76px);line-height:1.04;letter-spacing:-3px;margin:22px 0}
+h1 span {color:var(--gold)}
+.hero p {max-width:580px;color:var(--muted);font-size:17px}
+.actions {display:flex;gap:12px;flex-wrap:wrap;margin:29px 0}
+.small-note {font-size:12px!important;color:#8490a7!important}
+.prize-card {
+  padding:34px;border-radius:18px;
+  border:1px solid rgba(229,189,104,.3);
+  background:radial-gradient(ellipse at top right,rgba(229,189,104,.12),transparent 60%),var(--panel);
+  box-shadow:0 25px 90px rgba(0,0,0,.24);
+}
+.prize-label {font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.prize {font-size:clamp(42px,5vw,62px);font-weight:850;color:var(--gold);letter-spacing:-2px;margin:10px 0}
+.prize-card hr {border:0;border-top:1px solid var(--line);margin:24px 0}
+.stat-row {display:flex;justify-content:space-between;gap:15px;font-size:14px;margin:12px 0}
+.stat-row span:first-child {color:var(--muted)}
+section {padding:75px 0}
+.section-heading {max-width:650px;margin-bottom:35px}
+.section-heading h2 {font-size:clamp(29px,4vw,43px);letter-spacing:-1px;line-height:1.15;margin:13px 0}
+.section-heading p {color:var(--muted)}
+.cards {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card {
+  padding:25px;border:1px solid var(--line);border-radius:13px;
+  background:var(--panel);
+}
+.card-number {color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px}
+.card h3 {margin:15px 0 8px}
+.card p {margin:0;color:var(--muted);font-size:14px}
+.upload-section {background:#0c1323;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.upload-layout {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.upload-box {border:1px solid var(--line);background:var(--panel);padding:26px;border-radius:14px}
+label {display:block;margin:16px 0 7px;font-size:13px;font-weight:700}
+input,textarea {
+  width:100%;padding:13px 14px;border-radius:8px;
+  background:#0a1020;color:white;border:1px solid #29344a;
+  outline:none;
+}
+input:focus,textarea:focus {border-color:var(--gold)}
+input[type=file] {padding:12px}
+textarea {min-height:100px;resize:vertical}
+.preview {
+  margin-top:15px;min-height:100px;border:1px dashed #39445a;
+  border-radius:8px;display:grid;place-items:center;color:var(--muted);
+  padding:12px;overflow:hidden;
+}
+.preview img {max-width:100%;max-height:240px;object-fit:contain}
+.notice {padding:13px;background:rgba(229,189,104,.08);border:1px solid rgba(229,189,104,.2);border-radius:8px;color:#e9d9b6;font-size:12px;margin:16px 0}
+.faq {max-width:800px}
+details {padding:20px 0;border-bottom:1px solid var(--line)}
+summary {cursor:pointer;font-weight:700}
+details p {color:var(--muted);font-size:14px}
+footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.footer-row {display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a {color:var(--gold)}
+.modal {
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
+  z-index:30;align-items:center;justify-content:center;padding:20px;
+}
+.modal-content {width:min(450px,100%);background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:25px}
+.modal-content h2 {margin-top:0}
+.modal-content p {color:var(--muted);font-size:14px}
+.close {float:right;background:none;border:0;color:white;font-size:24px;cursor:pointer}
+@media(max-width:800px) {
+ .hero-grid,.upload-layout {grid-template-columns:1fr}
+ .hero {padding-top:60px}
+ .cards {grid-template-columns:1fr}
+ .nav-links {gap:12px}
+ .nav-links a:not(.btn) {display:none}
+ h1 {letter-spacing:-2px}
+}
 </style>
 </head>
-<body><header>
-  <div class="brand"><span class="logo">V</span> VANGUARD MARK</div>
-  <button onclick="document.getElementById('menu').classList.toggle('show')">More +</button>
-</header><nav id="menu">
-  <a href="#competition">Competition</a>
-  <a href="#process">How It Works</a>
-  <a href="#rules">Rules</a>
-  <a href="account.html">Account</a>
-  <a href="dashboard.html">Dashboard</a>
-</nav><main>
-<section class="hero" id="competition">
-  <div class="tag">DESIGN. VISION. RECOGNITION.</div>
-  <h1>Great ideas deserve a <span>grand stage.</span></h1>
-  <p>Vanguard Mark is a logo design competition concept celebrating creativity, original ideas and visual identity.</p>
-  <a class="btn" href="#process">Explore Competition</a>
-  <a class="btn btn2" href="account.html">My Account</a>  <div class="prize">
-    <div class="tag">ADVERTISED GRAND PRIZE</div>
-    <div class="amount">$50,000</div>
-    <p>Proposed prize for the winning logo design</p>
-    <strong style="color:#f2d99c">PREPARATION STAGE</strong>
-    <p>Prize funding, official rules and eligibility must be verified before entries or payments are accepted.</p>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#">
+        <span class="brand-icon">V</span>
+        <span>VANGUARD <span style="color:var(--gold)">MARK</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#competition">Competition</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a class="btn btn-outline" href="account.html">Sign in</a>
+      </div>
+    </nav>
   </div>
-</section><section id="process">
-  <div class="tag">THE PROCESS</div>
-  <h2>From idea to recognition.</h2>
-  <div class="grid">
-    <div class="card"><strong>01</strong><h3>Create</h3><p>Develop an original logo that communicates your idea clearly.</p></div>
-    <div class="card"><strong>02</strong><h3>Prepare</h3><p>Review the final eligibility requirements and competition rules.</p></div>
-    <div class="card"><strong>03</strong><h3>Submit</h3><p>Submit when the competition is officially open and verified.</p></div>
+</header>
+
+<main>
+  <section class="hero" id="competition">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> THE DESIGN CHALLENGE</div>
+        <h1>One design.<br>A bold vision.<br><span>$50,000.</span></h1>
+        <p>
+          Every great brand starts with an idea. Bring yours to the table
+          and showcase your creativity in the Vanguard Mark logo competition.
+        </p>
+        <div class="actions">
+          <a href="#submit" class="btn btn-gold">Submit Your Logo →</a>
+          <a href="#how" class="btn btn-outline">Discover how it works</a>
+        </div>
+        <p class="small-note">Review the official competition rules, eligibility requirements and winner-selection terms before entering.</p>
+      </div>
+      <div class="prize-card">
+        <div class="prize-label">Advertised grand prize</div>
+        <div class="prize">$50,000</div>
+        <p>One winning design. A chance to make your mark.</p>
+        <hr>
+        <div class="stat-row"><span>Entry fee</span><strong>$3 per entry</strong></div>
+        <div class="stat-row"><span>Submission format</span><strong>Digital logo design</strong></div>
+        <div class="stat-row"><span>Entry status</span><strong>Subject to verification</strong></div>
+        <div class="notice">The prize is an advertised target, not a guarantee of available funds. Paid entries must not open until the prize funding, rules and applicable legal requirements are verified.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">THE PROCESS</div>
+        <h2>Your idea deserves a place at the table.</h2>
+        <p>A simple submission journey, designed to keep the process clear at every stage.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="card-number">STEP 01</div><h3>Create your account</h3><p>Set up your profile so your submission and entry details can be associated with you.</p></article>
+        <article class="card"><div class="card-number">STEP 02</div><h3>Upload your design</h3><p>Share an original logo design in a supported image format and provide its details.</p></article>
+        <article class="card"><div class="card-number">STEP 03</div><h3>Review your entry</h3><p>Check the competition terms and payment details. Entries require verified payment before activation.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="upload-section" id="submit">
+    <div class="container upload-layout">
+      <div>
+        <div class="eyebrow">MAKE YOUR MARK</div>
+        <div class="section-heading">
+          <h2>Bring your vision to life.</h2>
+          <p>Start by preparing your logo design. You'll be able to preview your image before continuing.</p>
+        </div>
+        <div class="notice">This initial version previews your logo locally in your browser. It does not upload files to a server, create accounts, charge payments or confirm competition entries.</div>
+      </div>
+      <form class="upload-box" id="logoForm">
+        <h3>Logo submission</h3>
+        <p class="small-note">Prepare your design details below.</p>
+        <label for="designTitle">Design title</label>
+        <input id="designTitle" name="designTitle" maxlength="100" required placeholder="Give your design a name">
+        <label for="designDescription">About your design</label>
+        <textarea id="designDescription" name="designDescription" maxlength="1000" placeholder="Tell us a little about your idea"></textarea>
+        <label for="logoFile">Upload logo image</label>
+        <input id="logoFile" name="logoFile" type="file" accept="image/png,image/jpeg,image/webp" required>
+        <div class="preview" id="preview">Your logo preview will appear here.</div>
+        <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400">
+          <input type="checkbox" id="agree" required style="width:auto;margin-top:5px">
+          <span>I confirm that this is my design or that I have permission to submit it, and I agree to review the official competition terms.</span>
+        </label>
+        <button class="btn btn-gold" type="submit" style="width:100%;margin-top:16px">Continue to entry details →</button>
+        <p class="small-note">Demo only: no payment will be taken and no submission will be delivered.</p>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">CLEAR EXPECTATIONS</div>
+        <h2>Competition information</h2>
+        <p>Participants should understand how entries are assessed and how the prize is awarded before paying an entry fee.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>Original work</h3><p>Submit work you created or have permission to use. Do not submit logos that infringe another person's rights.</p></article>
+        <article class="card"><h3>Transparent rules</h3><p>Eligibility, deadlines, judging criteria, refunds and winner selection must be published before paid entry opens.</p></article>
+        <article class="card"><h3>Payment security</h3><p>Entry payments should only be confirmed after the payment provider verifies the transaction.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container faq">
+      <div class="eyebrow">HELP CENTRE</div>
+      <h2>Frequently asked questions</h2>
+      <details><summary>How much does an entry cost?</summary><p>The proposed entry fee is $3. Real payments are not enabled in this demonstration.</p></details>
+      <details><summary>How do I know my entry has been received?</summary><p>A live version should provide an account dashboard and a unique submission reference after the payment and submission have been verified.</p></details>
+      <details><summary>How is the winner selected?</summary><p>The final rules must explain whether selection is based on judging, public voting or another lawful method. The live competition must not accept paid entries until those rules are finalized.</p></details>
+      <details><summary>How can I contact support?</summary><p>Use the official support email published by Vanguard Mark once the address has been configured. No unverified contact details are displayed here.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong style="color:white">VANGUARD MARK</strong><br>Ideas that make a mark.</div>
+    <div>Competition terms · Privacy · Refund policy</div>
+    <div>© <span id="year"></span> Vanguard Mark. All rights reserved.</div>
   </div>
-</section><section class="dark" id="submission">
-  <div class="tag">YOUR CREATIVE VISION</div>
-  <h2>Every great mark starts with an idea.</h2>
-  <p>Our submission system is still being prepared. This page does not accept official entries or payments.</p>
-  <div class="notice">The advertised $50,000 prize is not a statement that funds are secured. Official rules and funding must be verified before launch.</div>
-  <br>
-  <a class="btn" href="account.html">Visit Account</a>
-</section><section id="rules">
-  <div class="tag">TRANSPARENCY FIRST</div>
-  <h2>Clear rules. Fair expectations.</h2>
-  <div class="grid">
-    <div class="card"><h3>Eligibility</h3><p>Participation requirements must be published before entries open.</p></div>
-    <div class="card"><h3>Judging</h3><p>Selection criteria and winner announcements must be explained.</p></div>
-    <div class="card"><h3>Ownership</h3><p>Artwork rights, payment terms, refunds and privacy must be clearly defined.</p></div>
+</footer>
+
+<div class="modal" id="accountModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('accountModal')" aria-label="Close">&times;</button>
+    <h2>Welcome to Vanguard Mark</h2>
+    <p>Account registration and sign-in will be available when secure authentication is connected.</p>
+    <button class="btn btn-gold" style="width:100%" onclick="closeModal('accountModal')">Continue browsing</button>
   </div>
-</section><section class="dark">
-  <h2>Give your creativity a stage.</h2>
-  <p>Explore Vanguard Mark as the competition concept develops.</p>
-  <a class="btn" href="account.html">Explore Your Account</a>
-</section>
-</main><footer>
-  <p style="color:#f2d99c;font-weight:bold">VANGUARD MARK</p>
-  <a href="#competition">Competition</a>
-  <a href="#rules">Rules</a>
-  <a href="account.html">Account</a>
-  <a href="dashboard.html">Dashboard</a>
-  <p>© <span id="year">2026</span> Vanguard Mark. Competition concept; official entries and payments are not currently accepted.</p>
-</footer><script>
-document.getElementById("year").textContent=new Date().getFullYear();
-</script></body>
+</div>
+
+<div class="modal" id="entryModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('entryModal')" aria-label="Close">&times;</button>
+    <h2>Design prepared</h2>
+    <p id="entryMessage">Your design details are ready for the next step.</p>
+    <div class="notice">Demo only: your logo has not been uploaded to a server and no competition entry or payment has been created.</div>
+    <a class="btn btn-gold" href="payment.html" style="width:100%;display:flex;">Continue to payment →</a>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+const fileInput = document.getElementById('logoFile');
+const preview = document.getElementById('preview');
+let previewUrl = null;
+
+fileInput.addEventListener('change', function() {
+  const file = this.files && this.files[0];
+  if (!file) {
+    preview.textContent = 'Your logo preview will appear here.';
+    return;
+  }
+  if (!file.type.startsWith('image/')) {
+    preview.textContent = 'Please select a valid image file.';
+    this.value = '';
+    return;
+  }
+  if (file.size > 5 * 1024 * 1024) {
+    preview.textContent = 'Please choose an image smaller than 5 MB.';
+    this.value = '';
+    return;
+  }
+  if (previewUrl) URL.revokeObjectURL(previewUrl);
+  previewUrl = URL.createObjectURL(file);
+  preview.innerHTML = '';
+  const image = document.createElement('img');
+  image.src = previewUrl;
+  image.alt = 'Preview of your logo design';
+  preview.appendChild(image);
+});
+
+document.getElementById('logoForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+  const title = document.getElementById('designTitle').value.trim();
+  document.getElementById('entryMessage').textContent =
+    'Your design "' + title + '" is prepared in this browser demonstration. No files or personal information have been sent to a server.';
+  openModal('entryModal');
+});
+</script>
+</body>
   </html>
