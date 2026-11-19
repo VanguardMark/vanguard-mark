@@ -3,852 +3,433 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080a10">
+<meta name="theme-color" content="#090909">
 <title>Vanguard Mark | $50,000 Logo Competition</title>
-<meta name="description" content="Discover Vanguard Mark, a logo design competition featuring a $50,000 grand prize. Explore the competition, submit your design, and follow your entry status.">
-
+<meta name="description" content="Discover Vanguard Mark, a logo design competition featuring a $50,000 grand prize. Explore the competition, submit your design, and review the official rules.">
 <style>
-:root {
-  --bg:#080a10;
-  --panel:#10131c;
-  --panel-light:#151a25;
-  --gold:#d9b66d;
-  --gold-light:#f0d89d;
-  --text:#f4f2ec;
-  --muted:#a3a6b1;
-  --line:rgba(217,182,109,.17);
-}
-
-* {
-  box-sizing:border-box;
-}
-
-html {
-  scroll-behavior:smooth;
-}
-
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.7;
-}
-
-a {
-  color:inherit;
-  text-decoration:none;
-}
-
-button,input,textarea {
-  font:inherit;
-}
-
-button,a {
-  -webkit-tap-highlight-color:transparent;
-}
-
-.container {
-  width:min(1160px,90%);
-  margin:auto;
-}
-
-header {
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(8,10,16,.94);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255,255,255,.065);
-}
-
-nav {
-  min-height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-weight:850;
-  letter-spacing:1.8px;
-  font-size:13px;
-}
-
-.brand-icon {
-  width:40px;
-  height:40px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  display:grid;
-  place-items:center;
-  font-weight:900;
-  font-size:21px;
-  border-radius:3px;
-  box-shadow:inset 0 0 18px rgba(217,182,109,.06);
-}
-
-.nav-links {
-  display:flex;
-  align-items:center;
-  gap:25px;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.nav-links a:not(.btn):hover {
-  color:var(--gold-light);
-}
-
-.btn {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  padding:13px 20px;
-  border-radius:4px;
-  border:1px solid transparent;
-  font-weight:700;
-  font-size:13px;
-  cursor:pointer;
-  transition:background .2s,border-color .2s,color .2s;
-}
-
-.btn:hover {
-  transform:translateY(-1px);
-}
-
-.btn-gold {
-  background:var(--gold);
-  color:#11100c;
-}
-
-.btn-gold:hover {
-  background:var(--gold-light);
-}
-
-.btn-outline {
-  border-color:rgba(217,182,109,.35);
-  color:var(--text);
-  background:transparent;
-}
-
-.btn-outline:hover {
-  border-color:var(--gold);
-  background:rgba(217,182,109,.06);
-}
-
-.hero {
-  padding:110px 0 90px;
-  overflow:hidden;
-  position:relative;
-  background:
-    radial-gradient(ellipse at 80% 15%,rgba(217,182,109,.075),transparent 38%),
-    linear-gradient(180deg,#0b0e16 0%,#080a10 100%);
-}
-
-.hero:before {
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  right:-250px;
-  top:100px;
-  border:1px solid rgba(217,182,109,.08);
-  border-radius:50%;
-  box-shadow:0 0 0 60px rgba(217,182,109,.018),
-             0 0 0 120px rgba(217,182,109,.012);
-  pointer-events:none;
-}
-
-.hero-grid {
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:65px;
-  align-items:center;
-  position:relative;
-  z-index:1;
-}
-
-.eyebrow {
-  display:inline-flex;
-  gap:10px;
-  align-items:center;
-  color:var(--gold);
-  font-size:10px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-weight:800;
-}
-
-.dot {
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:var(--gold);
-  box-shadow:0 0 12px rgba(217,182,109,.5);
-}
-
-h1 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(48px,6.5vw,83px);
-  line-height:1.02;
-  letter-spacing:-2.8px;
-  font-weight:500;
-  margin:25px 0;
-}
-
-h1 span {
-  color:var(--gold);
-  font-style:italic;
-}
-
-.hero p {
-  max-width:570px;
-  color:var(--muted);
-  font-size:15px;
-}
-
-.actions {
-  display:flex;
-  gap:13px;
-  flex-wrap:wrap;
-  margin:32px 0;
-}
-
-.small-note {
-  font-size:11px!important;
-  color:#777e8e!important;
-}
-
-.prize-card {
-  padding:38px;
-  border-radius:5px;
-  border:1px solid rgba(217,182,109,.24);
-  background:
-    radial-gradient(ellipse at top right,rgba(217,182,109,.09),transparent 60%),
-    linear-gradient(145deg,#151923,#0e1119);
-  box-shadow:0 30px 100px rgba(0,0,0,.3);
-  position:relative;
-}
-
-.prize-card:before {
-  content:"";
-  position:absolute;
-  top:0;
-  left:35px;
-  width:55px;
-  height:2px;
-  background:var(--gold);
-}
-
-.prize-label {
-  font-size:10px;
-  color:var(--muted);
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-}
-
-.prize {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(44px,5vw,66px);
-  font-weight:500;
-  color:var(--gold);
-  letter-spacing:-2px;
-  margin:15px 0;
-}
-
-.prize-card hr {
-  border:0;
-  border-top:1px solid var(--line);
-  margin:27px 0;
-}
-
-.stat-row {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  font-size:12px;
-  margin:15px 0;
-}
-
-.stat-row span:first-child {
-  color:var(--muted);
-}
-
-.stat-row strong {
-  text-align:right;
-  font-weight:600;
-}
-
-section {
-  padding:85px 0;
-}
-
-.section-heading {
-  max-width:670px;
-  margin-bottom:40px;
-}
-
-.section-heading h2 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(32px,4vw,47px);
-  font-weight:500;
-  letter-spacing:-1.2px;
-  line-height:1.2;
-  margin:15px 0;
-}
-
-.section-heading p {
-  color:var(--muted);
-  font-size:14px;
-}
-
-.cards {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.card {
-  padding:29px;
-  border:1px solid rgba(255,255,255,.075);
-  border-radius:4px;
-  background:linear-gradient(145deg,#121620,#0e1119);
-  transition:border-color .2s,background .2s;
-}
-
-.card:hover {
-  border-color:rgba(217,182,109,.3);
-  background:linear-gradient(145deg,#171b25,#10131c);
-}
-
-.card-number {
-  color:var(--gold);
-  font-weight:800;
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-.card h3 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:500;
-  font-size:21px;
-  margin:19px 0 9px;
-}
-
-.card p {
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-}
-
-.upload-section {
-  background:#0b0e15;
-  border-top:1px solid rgba(255,255,255,.06);
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.upload-layout {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:start;
-}
-
-.upload-box {
-  border:1px solid rgba(217,182,109,.17);
-  background:linear-gradient(145deg,#131722,#0e1119);
-  padding:30px;
-  border-radius:4px;
-}
-
-.upload-box h3 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:25px;
-  font-weight:500;
-  margin-top:0;
-}
-
-label {
-  display:block;
-  margin:18px 0 8px;
-  font-size:12px;
-  font-weight:700;
-  color:#d7d8de;
-}
-
-input,textarea {
-  width:100%;
-  padding:14px;
-  border-radius:3px;
-  background:#090c13;
-  color:white;
-  border:1px solid #292e3b;
-  outline:none;
-}
-
-input:focus,textarea:focus {
-  border-color:var(--gold);
-}
-
-input[type=file] {
-  padding:12px;
-  font-size:12px;
-}
-
-textarea {
-  min-height:100px;
-  resize:vertical;
-}
-
-.preview {
-  margin-top:15px;
-  min-height:110px;
-  border:1px dashed #343a49;
-  border-radius:3px;
-  display:grid;
-  place-items:center;
-  color:var(--muted);
-  padding:15px;
-  overflow:hidden;
-  font-size:12px;
-}
-
-.preview img {
-  max-width:100%;
-  max-height:240px;
-  object-fit:contain;
-}
-
-.notice {
-  padding:15px;
-  background:rgba(217,182,109,.055);
-  border:1px solid rgba(217,182,109,.16);
-  border-radius:3px;
-  color:#d7c9a9;
-  font-size:11px;
-  margin:18px 0;
-}
-
-.faq {
-  max-width:800px;
-}
-
-details {
-  padding:22px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-summary {
-  cursor:pointer;
-  font-weight:650;
-  font-size:14px;
-}
-
-details p {
-  color:var(--muted);
-  font-size:13px;
-  padding-top:8px;
-}
-
-footer {
-  padding:38px 0;
-  border-top:1px solid rgba(255,255,255,.07);
-  color:var(--muted);
-  font-size:12px;
-  background:#07090e;
-}
-
-.footer-row {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-footer a {
-  color:var(--gold);
-}
-
-.modal {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.84);
-  z-index:30;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  backdrop-filter:blur(8px);
-}
-
-.modal-content {
-  width:min(450px,100%);
-  background:#121620;
-  border:1px solid rgba(217,182,109,.22);
-  border-radius:4px;
-  padding:28px;
-}
-
-.modal-content h2 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:500;
-  margin-top:0;
-}
-
-.modal-content p {
-  color:var(--muted);
-  font-size:13px;
-}
-
-.close {
-  float:right;
-  background:none;
-  border:0;
-  color:white;
-  font-size:24px;
-  cursor:pointer;
-}
-
-@media(max-width:800px) {
-  .hero-grid,.upload-layout {
-    grid-template-columns:1fr;
-  }
-
-  .hero {
-    padding:75px 0 65px;
-  }
-
-  .hero-grid {
-    gap:35px;
-  }
-
-  .cards {
-    grid-template-columns:1fr;
-  }
-
-  .nav-links {
-    gap:12px;
-  }
-
-  .nav-links a:not(.btn) {
-    display:none;
-  }
-
-  h1 {
-    letter-spacing:-1.8px;
-  }
-
-  section {
-    padding:65px 0;
-  }
-
-  .prize-card {
-    padding:30px;
-  }
-
-  .upload-box {
-    padding:22px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior:auto;
-  }
-
-  *,*::before,*::after {
-    transition:none!important;
-  }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button,a{ -webkit-tap-highlight-color:transparent}
+:root{--bg:#090909;--panel:#111;--panel2:#151515;--line:#292929;--muted:#a5a5a5;--gold:#d8b56d;--white:#fff}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.94);backdrop-filter:blur(14px);border-bottom:1px solid #222}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:2px;font-size:15px}
+.brand-mark{width:35px;height:35px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:18px}
+.nav-links{display:flex;align-items:center;gap:27px;font-size:13px;color:#c5c5c5}
+.nav-links a:hover,.footer-links a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border:1px solid var(--gold);background:var(--gold);color:#090909;font-weight:700;font-size:12px;letter-spacing:.6px;cursor:pointer;transition:.2s}
+.btn:hover{background:#e7c987;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--gold)}
+.btn-outline:hover{background:var(--gold);color:#090909}
+.btn-dark{background:#151515;color:#fff;border-color:#383838}
+.btn-dark:hover{background:#202020;color:#fff}
+.hero{position:relative;overflow:hidden;padding:105px 0 95px;border-bottom:1px solid #222;background:radial-gradient(ellipse at 80% 30%,rgba(216,181,109,.09),transparent 38%),linear-gradient(135deg,#090909,#0d0d0d 60%,#101010)}
+.hero:after{content:"";position:absolute;right:-100px;top:35px;width:420px;height:420px;border:1px solid rgba(216,181,109,.12);transform:rotate(45deg);pointer-events:none}
+.eyebrow{display:flex;align-items:center;gap:10px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.03;letter-spacing:-2.8px;margin:24px 0 22px;max-width:800px}
+h1 span{color:var(--gold)}
+.hero-copy{max-width:620px;color:#b7b7b7;font-size:16px;line-height:1.9;margin-bottom:32px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-meta{display:flex;gap:35px;flex-wrap:wrap;margin-top:55px;padding-top:25px;border-top:1px solid #292929;max-width:660px}
+.meta-item strong{display:block;font-size:18px;letter-spacing:.3px}
+.meta-item span{display:block;color:#888;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.section{padding:85px 0;border-bottom:1px solid #222}
+.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:38px}
+.section-heading h2{font-size:clamp(28px,4vw,43px);line-height:1.15;letter-spacing:-1px;margin:13px 0 0}
+.section-heading p{color:#999;max-width:420px;font-size:13px;line-height:1.9;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);padding:28px;min-height:210px;transition:.2s}
+.card:hover{border-color:#625237;transform:translateY(-2px)}
+.card-number{font-size:12px;color:var(--gold);letter-spacing:2px}
+.card h3{font-size:18px;margin:23px 0 10px}
+.card p{font-size:13px;color:#999;line-height:1.85;margin:0}
+.competition{background:#0d0d0d}
+.prize-panel{display:grid;grid-template-columns:1fr 1fr;border:1px solid #333;background:linear-gradient(120deg,#141414,#0d0d0d)}
+.prize-main{padding:45px;border-right:1px solid #333}
+.prize-label{color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.prize-amount{font-size:clamp(48px,7vw,76px);line-height:1.1;letter-spacing:-3px;font-weight:800;margin:18px 0}
+.prize-main p,.prize-details p{font-size:13px;line-height:1.9;color:#a5a5a5}
+.prize-details{padding:40px;display:flex;flex-direction:column;justify-content:center;gap:23px}
+.detail-row{display:flex;gap:15px;align-items:flex-start}
+.detail-icon{color:var(--gold);font-size:18px}
+.detail-row strong{display:block;font-size:13px;margin-bottom:4px}
+.detail-row span{display:block;font-size:12px;color:#999;line-height:1.7}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.timeline-item{padding:22px;background:#111;border:1px solid #292929}
+.timeline-date{font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase}
+.timeline-item h3{font-size:15px;margin:10px 0 7px}
+.timeline-item p{font-size:12px;color:#999;line-height:1.8;margin:0}
+.notice{margin-top:20px;padding:17px 20px;background:#14120e;border:1px solid #44391f;color:#c5b99e;font-size:12px;line-height:1.8}
+.form-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:start}
+.form-intro h2{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:15px 0}
+.form-intro p{font-size:13px;line-height:1.9;color:#999}
+.form-box{background:#111;border:1px solid #292929;padding:30px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;color:#c9c9c9;letter-spacing:.5px}
+.field input,.field textarea{width:100%;padding:13px;background:#090909;border:1px solid #333;color:#fff;outline:none;border-radius:0}
+.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{min-height:110px;resize:vertical}
+.field small{font-size:10px;color:#777}
+.file-input{font-size:12px}
+.form-note{font-size:11px;color:#888;line-height:1.8;margin:20px 0}
+.faq-list{border-top:1px solid #333}
+.faq-item{border-bottom:1px solid #333}
+.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:none;border:0;color:#fff;padding:22px 0;cursor:pointer;font-weight:700;font-size:14px}
+.faq-question span:last-child{color:var(--gold);font-size:20px}
+.faq-answer{display:none;color:#999;font-size:13px;line-height:1.9;padding:0 35px 22px 0}
+.faq-item.active .faq-answer{display:block}
+.cta{padding:75px 0;text-align:center;background:radial-gradient(ellipse at center,rgba(216,181,109,.08),transparent 65%)}
+.cta h2{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:16px 0}
+.cta p{max-width:550px;margin:0 auto 25px;color:#999;font-size:13px;line-height:1.9}
+footer{border-top:1px solid #292929;padding:30px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.footer-copy{font-size:11px;color:#777}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:#999}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{width:min(480px,100%);background:#111;border:1px solid #393939;padding:32px;position:relative;max-height:90vh;overflow:auto}
+.modal-close{position:absolute;right:16px;top:12px;border:0;background:none;color:#aaa;font-size:25px;cursor:pointer}
+.modal-box h2{font-size:25px;margin:0 30px 12px 0}
+.modal-box p{font-size:13px;line-height:1.9;color:#aaa}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+.modal-actions .btn{flex:1}
+@media(max-width:800px){
+.nav{height:auto;min-height:70px;flex-wrap:wrap;padding:14px 0}
+.nav-links{order:3;width:100%;justify-content:space-between;gap:12px;padding:8px 0 2px;font-size:11px}
+.nav>.btn{padding:10px 12px;font-size:10px}
+.hero{padding:75px 0 65px}
+.hero:after{width:240px;height:240px;right:-140px}
+.section{padding:65px 0}
+.section-heading{display:block}
+.section-heading p{margin-top:18px}
+.cards{grid-template-columns:1fr}
+.card{min-height:auto}
+.prize-panel{grid-template-columns:1fr}
+.prize-main{border-right:0;border-bottom:1px solid #333;padding:30px}
+.prize-details{padding:30px}
+.timeline{grid-template-columns:1fr}
+.form-layout{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:500px){
+.container{width:calc(100% - 30px)}
+h1{letter-spacing:-1.7px}
+.hero-meta{gap:22px}
+.form-grid{grid-template-columns:1fr}
+.field.full{grid-column:auto}
+.form-box{padding:20px}
+.footer-inner{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="container">
-    <nav>
-      <a class="brand" href="index.html">
-        <span class="brand-icon">V</span>
-        <span>VANGUARD <span style="color:var(--gold)">MARK</span></span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#how">How it works</a>
-        <a href="#competition">Competition</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a class="btn btn-outline" href="account.html">Sign in</a>
-      </div>
+  <div class="container nav">
+    <a href="#" class="brand" aria-label="Vanguard Mark home">
+      <span class="brand-mark">V</span>
+      <span>VANGUARD MARK</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#how">How it works</a>
+      <a href="#competition">Competition</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="account.html">Sign in</a>
     </nav>
+    <a href="#submit" class="btn">Submit Your Logo <span>↗</span></a>
   </div>
 </header>
 
 <main>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">The Design Challenge</div>
+    <h1>One design.<br>A bold vision.<br><span>$50,000.</span></h1>
+    <p class="hero-copy">Every great brand starts with an idea. Bring yours to the table and showcase your creativity in the Vanguard Mark logo competition.</p>
+    <div class="hero-actions">
+      <a href="#submit" class="btn">Submit Your Logo <span>↗</span></a>
+      <a href="#how" class="btn btn-outline">Discover How It Works</a>
+    </div>
+    <div class="hero-meta">
+      <div class="meta-item"><strong>$50,000</strong><span>Grand Prize</span></div>
+      <div class="meta-item"><strong>Open Call</strong><span>Logo Design</span></div>
+      <div class="meta-item"><strong>Global Vision</strong><span>Creative Ideas</span></div>
+    </div>
+  </div>
+</section>
 
-  <section class="hero" id="competition">
-    <div class="container hero-grid">
-
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-heading">
       <div>
-        <div class="eyebrow"><span class="dot"></span> THE DESIGN CHALLENGE</div>
-
-        <h1>One design.<br>A bold vision.<br><span>$50,000.</span></h1>
-
-        <p>
-          Every great brand starts with an idea. Bring yours to the table
-          and showcase your creativity in the Vanguard Mark logo competition.
-        </p>
-
-        <div class="actions">
-          <a href="#submit" class="btn btn-gold">Submit Your Logo →</a>
-          <a href="#how" class="btn btn-outline">Discover how it works</a>
-        </div>
-
-        <p class="small-note">Review the official competition rules, eligibility requirements and winner-selection terms before entering.</p>
+        <div class="eyebrow">Your opportunity</div>
+        <h2>How it works</h2>
       </div>
-
-      <div class="prize-card">
-        <div class="prize-label">Advertised grand prize</div>
-        <div class="prize">$50,000</div>
-        <p>One winning design. A chance to make your mark.</p>
-
-        <hr>
-
-        <div class="stat-row"><span>Entry fee</span><strong>$3 per entry</strong></div>
-        <div class="stat-row"><span>Submission format</span><strong>Digital logo design</strong></div>
-        <div class="stat-row"><span>Entry status</span><strong>Subject to verification</strong></div>
-
-        <div class="notice">The prize is an advertised target, not a guarantee of available funds. Paid entries must not open until the prize funding, rules and applicable legal requirements are verified.</div>
-      </div>
-
+      <p>A clear path from your first concept to a competition submission. Review the requirements before preparing your design.</p>
     </div>
-  </section>
 
-  <section id="how">
-    <div class="container">
-
-      <div class="section-heading">
-        <div class="eyebrow">THE PROCESS</div>
-        <h2>Your idea deserves a place at the table.</h2>
-        <p>A simple submission journey, designed to keep the process clear at every stage.</p>
-      </div>
-
-      <div class="cards">
-        <article class="card">
-          <div class="card-number">STEP 01</div>
-          <h3>Create your account</h3>
-          <p>Set up your profile so your submission and entry details can be associated with you.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-number">STEP 02</div>
-          <h3>Upload your design</h3>
-          <p>Share an original logo design in a supported image format and provide its details.</p>
-        </article>
-
-        <article class="card">
-          <div class="card-number">STEP 03</div>
-          <h3>Review your entry</h3>
-          <p>Check the competition terms and payment details. Entries require verified payment before activation.</p>
-        </article>
-      </div>
-
+    <div class="cards">
+      <article class="card">
+        <div class="card-number">01 / CREATE</div>
+        <h3>Design Your Logo</h3>
+        <p>Create an original logo that reflects a bold vision. Focus on originality, clarity, versatility, and a strong visual identity.</p>
+      </article>
+      <article class="card">
+        <div class="card-number">02 / SUBMIT</div>
+        <h3>Send Your Entry</h3>
+        <p>Prepare your design and the requested information. Review the official competition rules and submission requirements before proceeding.</p>
+      </article>
+      <article class="card">
+        <div class="card-number">03 / GET NOTICED</div>
+        <h3>Showcase Your Vision</h3>
+        <p>Eligible entries can be reviewed under the competition rules. The winner and prize award are subject to verification and the official terms.</p>
+      </article>
     </div>
-  </section>
 
-  <section class="upload-section" id="submit">
-    <div class="container upload-layout">
+    <div class="notice">
+      <strong>Competition timeline:</strong> The competition opens November 1, 2026, and closes December 20, 2026. The winner is expected to be announced and the prize awarded before Christmas 2026, subject to funding verification and the official competition rules.
+    </div>
+  </div>
+</section>
 
+<section class="section competition" id="competition">
+  <div class="container">
+    <div class="section-heading">
       <div>
-        <div class="eyebrow">MAKE YOUR MARK</div>
+        <div class="eyebrow">The challenge</div>
+        <h2>A bold idea deserves<br>a bold opportunity.</h2>
+      </div>
+      <p>Vanguard Mark invites designers to put their creativity forward and present a distinctive logo concept.</p>
+    </div>
 
-        <div class="section-heading">
-          <h2>Bring your vision to life.</h2>
-          <p>Start by preparing your logo design. You'll be able to preview your image before continuing.</p>
+    <div class="prize-panel">
+      <div class="prize-main">
+        <div class="prize-label">Grand Prize</div>
+        <div class="prize-amount">$50,000</div>
+        <p>A competition built around creative vision, thoughtful design, and original ideas. Review the official terms for eligibility, judging, prize conditions, and the selection process.</p>
+        <a href="competition-terms.html" class="btn btn-outline">Read Competition Rules ↗</a>
+      </div>
+      <div class="prize-details">
+        <div class="detail-row">
+          <div class="detail-icon">✦</div>
+          <div><strong>Original Design</strong><span>Submit creative work that you have the right to enter.</span></div>
         </div>
-
-        <div class="notice">This initial version previews your logo locally in your browser. It does not upload files to a server, create accounts, charge payments or confirm competition entries.</div>
+        <div class="detail-row">
+          <div class="detail-icon">◇</div>
+          <div><strong>Competition Review</strong><span>Entries are subject to eligibility checks and the official selection process.</span></div>
+        </div>
+        <div class="detail-row">
+          <div class="detail-icon">↗</div>
+          <div><strong>Prize Verification</strong><span>Any award is subject to the official terms and verification of available prize funding.</span></div>
+        </div>
       </div>
-
-      <form class="upload-box" id="logoForm">
-        <h3>Logo submission</h3>
-        <p class="small-note">Prepare your design details below.</p>
-
-        <label for="designTitle">Design title</label>
-        <input id="designTitle" name="designTitle" maxlength="100" required placeholder="Give your design a name">
-
-        <label for="designDescription">About your design</label>
-        <textarea id="designDescription" name="designDescription" maxlength="1000" placeholder="Tell us a little about your idea"></textarea>
-
-        <label for="logoFile">Upload logo image</label>
-        <input id="logoFile" name="logoFile" type="file" accept="image/png,image/jpeg,image/webp" required>
-
-        <div class="preview" id="preview">Your logo preview will appear here.</div>
-
-        <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400">
-          <input type="checkbox" id="agree" required style="width:auto;margin-top:5px">
-          <span>I confirm that this is my design or that I have permission to submit it, and I agree to review the official competition terms.</span>
-        </label>
-
-        <button class="btn btn-gold" type="submit" style="width:100%;margin-top:16px">Continue to entry details →</button>
-
-        <p class="small-note">Demo only: no payment will be taken and no submission will be delivered.</p>
-      </form>
-
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-
-      <div class="section-heading">
-        <div class="eyebrow">CLEAR EXPECTATIONS</div>
-        <h2>Competition information</h2>
-        <p>Participants should understand how entries are assessed and how the prize is awarded before paying an entry fee.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">November 1, 2026</div>
+        <h3>Competition Opens</h3>
+        <p>Eligible designers can begin preparing and submitting their logo concepts.</p>
       </div>
-
-      <div class="cards">
-        <article class="card">
-          <h3>Original work</h3>
-          <p>Submit work you created or have permission to use. Do not submit logos that infringe another person's rights.</p>
-        </article>
-
-        <article class="card">
-          <h3>Transparent rules</h3>
-          <p>Eligibility, deadlines, judging criteria, refunds and winner selection must be published before paid entry opens.</p>
-        </article>
-
-        <article class="card">
-          <h3>Payment security</h3>
-          <p>Entry payments should only be confirmed after the payment provider verifies the transaction.</p>
-        </article>
+      <div class="timeline-item">
+        <div class="timeline-date">December 20, 2026</div>
+        <h3>Submission Deadline</h3>
+        <p>The competition closes. Entries must meet the official submission requirements.</p>
       </div>
-
+      <div class="timeline-item">
+        <div class="timeline-date">Before Christmas 2026</div>
+        <h3>Winner Announcement</h3>
+        <p>The winner is expected to be announced and the prize awarded, subject to funding verification and the official rules.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <div class="container faq">
-
-      <div class="eyebrow">HELP CENTRE</div>
-      <h2>Frequently asked questions</h2>
-
-      <details>
-        <summary>How much does an entry cost?</summary>
-        <p>The proposed entry fee is $3. Real payments are not enabled in this demonstration.</p>
-      </details>
-
-      <details>
-        <summary>How do I know my entry has been received?</summary>
-        <p>A live version should provide an account dashboard and a unique submission reference after the payment and submission have been verified.</p>
-      </details>
-
-      <details>
-        <summary>How is the winner selected?</summary>
-        <p>The final rules must explain whether selection is based on judging, public voting or another lawful method. The live competition must not accept paid entries until those rules are finalized.</p>
-      </details>
-
-      <details>
-        <summary>How can I contact support?</summary>
-        <p>Use the official support email published by Vanguard Mark once the address has been configured. No unverified contact details are displayed here.</p>
-      </details>
-
+<section class="section" id="submit">
+  <div class="container form-layout">
+    <div class="form-intro">
+      <div class="eyebrow">Make your mark</div>
+      <h2>Submit your logo.</h2>
+      <p>Ready to share your vision? Prepare your design and complete the submission details. Ensure that your entry follows the official competition rules.</p>
+      <p>Before submitting, review the terms, eligibility requirements, and applicable prize conditions.</p>
+      <a href="competition-terms.html" class="btn btn-outline">Review Official Rules ↗</a>
     </div>
-  </section>
 
+    <form class="form-box" id="logoForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="fullName">FULL NAME</label>
+          <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+        </div>
+        <div class="field">
+          <label for="email">EMAIL ADDRESS</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com">
+        </div>
+        <div class="field full">
+          <label for="designName">DESIGN NAME</label>
+          <input type="text" id="designName" name="designName" required placeholder="Name of your logo concept">
+        </div>
+        <div class="field full">
+          <label for="description">DESIGN DESCRIPTION</label>
+          <textarea id="description" name="description" required placeholder="Tell us about your concept and creative vision"></textarea>
+        </div>
+        <div class="field full">
+          <label for="logoFile">LOGO DESIGN FILE</label>
+          <input class="file-input" type="file" id="logoFile" name="logoFile" accept=".png,.jpg,.jpeg,.svg,.pdf" required>
+          <small>Accepted formats: PNG, JPG, SVG, or PDF.</small>
+        </div>
+      </div>
+      <p class="form-note">By continuing, you confirm that your submission is original or that you have the necessary rights to submit it. Review the official rules and privacy policy before proceeding.</p>
+      <button type="submit" class="btn" style="width:100%">Continue With Submission ↗</button>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Need clarity?</div>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <p>Find answers to common questions before preparing your entry.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>What is Vanguard Mark?</span><span>+</span></button>
+        <div class="faq-answer">Vanguard Mark is presented as a logo design competition inviting participants to submit original logo concepts for consideration under the official competition rules.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>What is the grand prize?</span><span>+</span></button>
+        <div class="faq-answer">The advertised grand prize is $50,000. The award is subject to the official competition terms, eligibility requirements, and verification of prize funding.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>When does the competition close?</span><span>+</span></button>
+        <div class="faq-answer">The competition opens November 1, 2026, and closes December 20, 2026. The winner is expected to be announced and the prize awarded before Christmas 2026, subject to funding verification and the official rules.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>What file formats can I submit?</span><span>+</span></button>
+        <div class="faq-answer">The submission form accepts PNG, JPG, SVG, and PDF files. Check the official rules for any additional requirements regarding the design file.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>How is the winner selected?</span><span>+</span></button>
+        <div class="faq-answer">The winner is selected according to the official competition rules and selection process. Review the published terms for the applicable criteria and conditions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center">Your vision starts here</div>
+    <h2>One design could change everything.</h2>
+    <p>Bring your creativity to Vanguard Mark. Review the rules, prepare your logo, and take the next step.</p>
+    <a href="#submit" class="btn">Submit Your Logo ↗</a>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="container footer-row">
-    <div><strong style="color:white">VANGUARD MARK</strong><br>Ideas that make a mark.</div>
-    <div>Competition terms · Privacy · Refund policy</div>
-    <div>© <span id="year"></span> Vanguard Mark. All rights reserved.</div>
+  <div class="container footer-inner">
+    <a href="#" class="brand"><span class="brand-mark">V</span><span>VANGUARD MARK</span></a>
+    <div class="footer-links">
+      <a href="competition-terms.html">Competition Terms</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="account.html">Sign in</a>
+    </div>
+    <div class="footer-copy">© 2026 Vanguard Mark. All rights reserved.</div>
   </div>
 </footer>
 
-<div class="modal" id="accountModal">
-  <div class="modal-content">
-    <button class="close" onclick="closeModal('accountModal')" aria-label="Close">&times;</button>
-    <h2>Welcome to Vanguard Mark</h2>
-    <p>Account registration and sign-in will be available when secure authentication is connected.</p>
-    <button class="btn btn-gold" style="width:100%" onclick="closeModal('accountModal')">Continue browsing</button>
+<div class="modal" id="entryModal" role="dialog" aria-modal="true" aria-labelledby="entryModalTitle">
+  <div class="modal-box">
+    <button class="modal-close" type="button" aria-label="Close modal" onclick="closeModal('entryModal')">×</button>
+    <div class="eyebrow">Submission next step</div>
+    <h2 id="entryModalTitle">Your details are ready.</h2>
+    <p>Your information has been checked in this page. This form has not uploaded your logo or created a competition entry or payment. Continue only after reviewing the official rules and the next-step details.</p>
+    <div class="modal-actions">
+      <a href="payment.html" class="btn">Continue to payment details ↗</a>
+      <button type="button" class="btn btn-dark" onclick="closeModal('entryModal')">Go Back</button>
+    </div>
   </div>
 </div>
 
-<div class="modal" id="entryModal">
-  <div class="modal-content">
-    <button class="close" onclick="closeModal('entryModal')" aria-label="Close">&times;</button>
-    <h2>Design prepared</h2>
-    <p id="entryMessage">Your design details are ready for the next step.</p>
-    <div class="notice">Demo only: your logo has not been uploaded to a server and no competition entry or payment has been created.</div>
-    <a class="btn btn-gold" href="payment.html" style="width:100%;display:flex;">Continue to payment →</a>
+<div class="modal" id="accountModal" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
+  <div class="modal-box">
+    <button class="modal-close" type="button" aria-label="Close modal" onclick="closeModal('accountModal')">×</button>
+    <div class="eyebrow">Vanguard Mark</div>
+    <h2 id="accountModalTitle">Account access</h2>
+    <p>Sign in or create an account to continue. Account access must be connected to your authentication system.</p>
+    <div class="modal-actions">
+      <a href="account.html" class="btn">Continue to Sign In ↗</a>
+      <button type="button" class="btn btn-dark" onclick="closeModal('accountModal')">Close</button>
+    </div>
   </div>
 </div>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-function openModal(id) {
-  document.getElementById(id).style.display = 'flex';
+function openModal(id){
+  const modal=document.getElementById(id);
+  if(modal)modal.classList.add("open");
 }
 
-function closeModal(id) {
-  document.getElementById(id).style.display = 'none';
+function closeModal(id){
+  const modal=document.getElementById(id);
+  if(modal)modal.classList.remove("open");
 }
 
-const fileInput = document.getElementById('logoFile');
-const preview = document.getElementById('preview');
-let previewUrl = null;
+document.querySelectorAll(".faq-question").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const item=button.closest(".faq-item");
+    const active=item.classList.contains("active");
 
-fileInput.addEventListener('change', function() {
-  const file = this.files && this.files[0];
+    document.querySelectorAll(".faq-item").forEach(faq=>{
+      faq.classList.remove("active");
+      const symbol=faq.querySelector(".faq-question span:last-child");
+      if(symbol)symbol.textContent="+";
+    });
 
-  if (!file) {
-    preview.textContent = 'Your logo preview will appear here.';
-    return;
-  }
-
-  if (!file.type.startsWith('image/')) {
-    preview.textContent = 'Please select a valid image file.';
-    this.value = '';
-    return;
-  }
-
-  if (file.size > 5 * 1024 * 1024) {
-    preview.textContent = 'Please choose an image smaller than 5 MB.';
-    this.value = '';
-    return;
-  }
-
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
-
-  previewUrl = URL.createObjectURL(file);
-  preview.innerHTML = '';
-
-  const image = document.createElement('img');
-  image.src = previewUrl;
-  image.alt = 'Preview of your logo design';
-  preview.appendChild(image);
+    if(!active){
+      item.classList.add("active");
+      const symbol=button.querySelector("span:last-child");
+      if(symbol)symbol.textContent="−";
+    }
+  });
 });
 
-document.getElementById('logoForm').addEventListener('submit', function(event) {
+document.getElementById("logoForm").addEventListener("submit",function(event){
   event.preventDefault();
 
-  if (!this.reportValidity()) return;
+  if(!this.checkValidity()){
+    this.reportValidity();
+    return;
+  }
 
-  const title = document.getElementById('designTitle').value.trim();
+  openModal("entryModal");
+});
 
-  document.getElementById('entryMessage').textContent =
-    'Your design "' + title + '" is prepared in this browser demonstration. No files or personal information have been sent to a server.';
+document.querySelectorAll(".modal").forEach(modal=>{
+  modal.addEventListener("click",event=>{
+    if(event.target===modal)modal.classList.remove("open");
+  });
+});
 
-  openModal('entryModal');
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"){
+    document.querySelectorAll(".modal.open").forEach(modal=>{
+      modal.classList.remove("open");
+    });
+  }
 });
 </script>
 
 </body>
-  </html>
+      </html>
