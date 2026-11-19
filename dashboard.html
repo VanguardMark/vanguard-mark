@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dashboard | Vanguard Mark</title>
-
-  <style>
+  <meta name="theme-color" content="#0b0b0b">
+  <title>Dashboard | Vanguard Mark</title>  <style>
     * {
       box-sizing: border-box;
     }
@@ -14,7 +11,7 @@
     body {
       margin: 0;
       background: #090909;
-      color: #ffffff;
+      color: #fff;
       font-family: Arial, sans-serif;
     }
 
@@ -22,9 +19,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 15px;
       padding: 18px 6%;
-      background: #111111;
+      background: #111;
       border-bottom: 1px solid #3a301c;
     }
 
@@ -33,6 +31,12 @@
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     header a {
@@ -57,12 +61,13 @@
       font-size: clamp(26px, 5vw, 38px);
     }
 
-    .welcome h1 span {
+    .welcome h1 span,
+    .gold {
       color: #d8b45a;
     }
 
     .muted {
-      color: #aaaaaa;
+      color: #aaa;
       line-height: 1.7;
     }
 
@@ -87,10 +92,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 250px), 1fr)
-      );
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
       gap: 18px;
     }
 
@@ -108,7 +110,7 @@
     }
 
     .card p {
-      color: #bbbbbb;
+      color: #bbb;
       font-size: 14px;
       line-height: 1.7;
     }
@@ -120,8 +122,9 @@
       border: none;
       border-radius: 7px;
       background: #d8b45a;
-      color: #111111;
+      color: #111;
       text-decoration: none;
+      text-align: center;
       font-size: 14px;
       font-weight: bold;
       cursor: pointer;
@@ -129,8 +132,8 @@
 
     .button.secondary {
       background: #292929;
-      color: #ffffff;
-      border: 1px solid #555555;
+      color: #fff;
+      border: 1px solid #555;
     }
 
     .notice {
@@ -153,7 +156,7 @@
       margin-top: 45px;
       padding: 25px 15px;
       text-align: center;
-      color: #777777;
+      color: #777;
       border-top: 1px solid #292929;
       font-size: 13px;
     }
@@ -180,192 +183,215 @@
         padding: 19px;
       }
     }
-  </style>
-</head>
+  </style></head><body><header>
+  <div class="brand">VANGUARD MARK</div>  <nav>
+    <a href="./index.html">Home</a>
+    <a href="./submit.html">Submit a logo</a>
+    <a href="./payment.html">Entry payment</a>
+    <a href="./account.html">Account</a>
+  </nav>
+</header><main id="dashboard" hidden>  <section class="welcome">
+    <h1>Your creative <span>dashboard.</span></h1>
+    <p class="muted">
+      Manage your account and access your Vanguard Mark workspace.
+    </p>
+  </section>  <section class="account-card">
+    <h2>Account overview</h2><p class="muted">Signed in as:</p>
+<p id="userEmail">Loading account...</p>
 
-<body>
+<p class="muted">
+  Your account is signed in. Competition entries must be
+  submitted and paid for separately.
+</p>
 
-  <header>
-    <div class="brand">VANGUARD MARK</div>
-    <a href="./index.html">Visit website ↗</a>
-  </header>
+<button class="button secondary" id="logoutButton">
+  Log out
+</button>
 
-  <main id="dashboard" hidden>
+  </section>  <section>
+    <h2 class="section-heading">Your workspace</h2><div class="grid">
 
-    <section class="welcome">
-      <h1>Your creative <span>dashboard.</span></h1>
-      <p class="muted">
-        Manage your account and get ready to bring your logo ideas to life.
-      </p>
-    </section>
+  <article class="card">
+    <h3>Submit a logo</h3>
+    <p>
+      Open the submission page to prepare your logo design
+      for the competition.
+    </p>
+    <a class="button" href="./submit.html">
+      Open submissions
+    </a>
+  </article>
 
-    <section class="account-card">
-      <h2>Account overview</h2>
+  <article class="card">
+    <h3>Entry payment</h3>
+    <p>
+      Continue to the entry payment page when you have
+      prepared a valid logo submission.
+    </p>
+    <a class="button" href="./payment.html">
+      Open payment page
+    </a>
+  </article>
 
-      <p class="muted">Signed in as:</p>
-      <p id="userEmail">Loading account...</p>
+  <article class="card">
+    <h3>My submissions</h3>
+    <p>
+      Submission history will be connected to the database
+      so that entries and verified payment statuses can be tracked.
+    </p>
+    <button class="button secondary" id="submissionsButton">
+      Check status
+    </button>
+  </article>
 
-      <p class="muted">
-        Your Vanguard Mark account is active.
-      </p>
+  <article class="card">
+    <h3>Account security</h3>
+    <p>
+      Request a password reset email for your signed-in account.
+    </p>
+    <button class="button secondary" id="resetButton">
+      Reset password
+    </button>
+  </article>
 
-      <button class="button secondary" id="logoutButton">
-        Log out
-      </button>
-    </section>
+  <article class="card">
+    <h3>Prize withdrawals</h3>
+    <p>
+      Withdrawal services are not yet active. No prize balance
+      or withdrawal eligibility is confirmed on this page.
+    </p>
+    <button class="button secondary" id="withdrawButton">
+      Withdrawal information
+    </button>
+  </article>
 
-    <section>
-      <h2 class="section-heading">Your workspace</h2>
+  <article class="card">
+    <h3>Support</h3>
+    <p>
+      Get help with your account, logo submission, or payment.
+    </p>
+    <a class="button secondary" href="./support.html">
+      Open support
+    </a>
+  </article>
 
-      <div class="grid">
+</div>
 
-        <article class="card">
-          <h3>Submit a logo</h3>
+  </section>  <div class="notice">
+    <strong>Payment security:</strong>
+    Starting checkout does not mean your payment has succeeded.
+    An entry must remain pending until the backend verifies
+    the actual payment with the payment provider.
+  </div>  <p id="status" role="status" aria-live="polite"></p></main><section id="loading" style="padding:60px 20px;text-align:center">
+  <p>Checking your account...</p>
+</section><footer>
+  © <span id="year"></span> Vanguard Mark. All rights reserved.
+</footer><script type="module">
+import {
+  auth,
+  signOut,
+  onAuthStateChanged
+} from "./firebase.js";
 
-          <p>
-            Get ready to submit your logo design for review.
-            The submission system will be connected in a future step.
-          </p>
+import {
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
-          <button class="button" id="logoButton">
-            Logo submissions coming soon
-          </button>
-        </article>
+const dashboard = document.getElementById("dashboard");
+const loading = document.getElementById("loading");
+const userEmail = document.getElementById("userEmail");
+const status = document.getElementById("status");
 
-        <article class="card">
-          <h3>My submissions</h3>
+const logoutButton = document.getElementById("logoutButton");
+const submissionsButton = document.getElementById("submissionsButton");
+const resetButton = document.getElementById("resetButton");
+const withdrawButton = document.getElementById("withdrawButton");
 
-          <p>
-            Your submitted logos and their review statuses will
-            appear here once the submission system is connected.
-          </p>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
-          <button class="button secondary" id="submissionsButton">
-            View submissions
-          </button>
-        </article>
+let currentUser = null;
 
-        <article class="card">
-          <h3>Account security</h3>
+function showStatus(message) {
+  status.textContent = message;
+}
 
-          <p>
-            Forgotten your password? Request a password reset
-            using your account email.
-          </p>
+onAuthStateChanged(auth, user => {
+  currentUser = user;
+  loading.hidden = true;
 
-          <button class="button secondary" id="resetButton">
-            Reset password
-          </button>
-        </article>
+  if (!user) {
+    dashboard.hidden = true;
+    window.location.replace("./account.html");
+    return;
+  }
 
-      </div>
-    </section>
+  dashboard.hidden = false;
+  userEmail.textContent = user.email || "Email unavailable";
+});
 
-    <div class="notice">
-      <strong>Coming next:</strong>
-      Logo uploads, submission tracking, and a secure database
-      for your design projects. These features are not active yet.
-    </div>
+logoutButton.addEventListener("click", async () => {
+  logoutButton.disabled = true;
 
-    <p id="status" role="status" aria-live="polite"></p>
+  try {
+    await signOut(auth);
+    window.location.replace("./account.html");
+  } catch (error) {
+    showStatus("Unable to log out. Please try again.");
+    logoutButton.disabled = false;
+  }
+});
 
-  </main>
+submissionsButton.addEventListener("click", () => {
+  let pending;
 
-  <section id="loading" style="padding:60px 20px;text-align:center">
-    <p>Checking your account...</p>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Vanguard Mark. All rights reserved.
-  </footer>
-
-  <script type="module">
-    import {
-      auth,
-      signOut,
-      onAuthStateChanged
-    } from "./firebase.js";
-
-    import {
-      sendPasswordResetEmail
-    } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-
-    const dashboard = document.getElementById("dashboard");
-    const loading = document.getElementById("loading");
-    const userEmail = document.getElementById("userEmail");
-    const status = document.getElementById("status");
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    let currentUser = null;
-
-    onAuthStateChanged(auth, (user) => {
-      currentUser = user;
-
-      loading.hidden = true;
-
-      if (!user) {
-        dashboard.hidden = true;
-
-        // Return visitors who are not logged in to the account page.
-        window.location.replace("./account.html");
-        return;
-      }
-
-      dashboard.hidden = false;
-      userEmail.textContent = user.email || "Email unavailable";
-    });
-
-    document.getElementById("logoutButton").addEventListener(
-      "click",
-      async () => {
-        try {
-          await signOut(auth);
-          window.location.replace("./account.html");
-        } catch (error) {
-          status.textContent = "Unable to log out. Please try again.";
-        }
-      }
+  try {
+    pending = JSON.parse(
+      sessionStorage.getItem("vanguardMarkPendingSubmission") || "null"
     );
+  } catch (error) {
+    pending = null;
+  }
 
-    document.getElementById("logoButton").addEventListener(
-      "click",
-      () => {
-        status.textContent =
-          "Logo submissions are not available yet. We'll build this feature next.";
-      }
+  if (pending && currentUser && pending.userId === currentUser.uid) {
+    showStatus(
+      "Current browser submission: " +
+      (pending.title || "Untitled") +
+      ". This is local browser information, not a verified server record."
     );
-
-    document.getElementById("submissionsButton").addEventListener(
-      "click",
-      () => {
-        status.textContent =
-          "Your submission history will be available after we connect the database.";
-      }
+  } else {
+    showStatus(
+      "No local submission was found. A permanent submission history requires the database connection."
     );
+  }
+});
 
-    document.getElementById("resetButton").addEventListener(
-      "click",
-      async () => {
-        if (!currentUser || !currentUser.email) {
-          status.textContent =
-            "We couldn't find your account email.";
-          return;
-        }
+resetButton.addEventListener("click", async () => {
+  if (!currentUser || !currentUser.email) {
+    showStatus("We couldn't find your account email.");
+    return;
+  }
 
-        try {
-          await sendPasswordResetEmail(auth, currentUser.email);
+  resetButton.disabled = true;
 
-          status.textContent =
-            "If the request succeeds, a password reset email will be sent to your account address.";
-        } catch (error) {
-          status.textContent =
-            "Unable to send a reset email right now. Please try again later.";
-        }
-      }
+  try {
+    await sendPasswordResetEmail(auth, currentUser.email);
+    showStatus(
+      "If the request succeeds, a password reset email will be sent to your account address."
     );
-  </script>
+  } catch (error) {
+    showStatus(
+      "Unable to send a reset email right now. Please try again later."
+    );
+  } finally {
+    resetButton.disabled = false;
+  }
+});
 
-</body>
+withdrawButton.addEventListener("click", () => {
+  showStatus(
+    "Withdrawals are not active yet. Prize eligibility and available balances must be verified before withdrawals can be enabled."
+  );
+});
+</script></body>
   </html>
