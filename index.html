@@ -3,144 +3,582 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
+<meta name="theme-color" content="#080a10">
 <title>Vanguard Mark | $50,000 Logo Competition</title>
 <meta name="description" content="Discover Vanguard Mark, a logo design competition featuring a $50,000 grand prize. Explore the competition, submit your design, and follow your entry status.">
+
 <style>
 :root {
-  --bg:#090e1c;
-  --panel:#111a2c;
-  --gold:#e5bd68;
-  --text:#f7f8fc;
-  --muted:#a8b1c5;
-  --line:rgba(255,255,255,.1);
+  --bg:#080a10;
+  --panel:#10131c;
+  --panel-light:#151a25;
+  --gold:#d9b66d;
+  --gold-light:#f0d89d;
+  --text:#f4f2ec;
+  --muted:#a3a6b1;
+  --line:rgba(217,182,109,.17);
 }
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
 body {
   margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.6;
+  line-height:1.7;
 }
-a {color:inherit;text-decoration:none}
-button,input,textarea {font:inherit}
-.container {width:min(1120px,90%);margin:auto}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,textarea {
+  font:inherit;
+}
+
+button,a {
+  -webkit-tap-highlight-color:transparent;
+}
+
+.container {
+  width:min(1160px,90%);
+  margin:auto;
+}
+
 header {
-  position:sticky;top:0;z-index:10;
-  background:rgba(9,14,28,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(8,10,16,.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.065);
 }
+
 nav {
-  min-height:76px;display:flex;align-items:center;
-  justify-content:space-between;gap:18px;
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
 }
-.brand {display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:1px}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:850;
+  letter-spacing:1.8px;
+  font-size:13px;
+}
+
 .brand-icon {
-  width:39px;height:39px;border:1px solid var(--gold);
-  color:var(--gold);display:grid;place-items:center;
-  font-weight:900;font-size:20px;border-radius:10px;
+  width:40px;
+  height:40px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:21px;
+  border-radius:3px;
+  box-shadow:inset 0 0 18px rgba(217,182,109,.06);
 }
-.nav-links {display:flex;align-items:center;gap:22px;font-size:14px;color:var(--muted)}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:25px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.nav-links a:not(.btn):hover {
+  color:var(--gold-light);
+}
+
 .btn {
-  display:inline-flex;justify-content:center;align-items:center;
-  gap:8px;padding:13px 19px;border-radius:8px;
-  border:1px solid transparent;font-weight:700;cursor:pointer;
-  transition:.2s;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  padding:13px 20px;
+  border-radius:4px;
+  border:1px solid transparent;
+  font-weight:700;
+  font-size:13px;
+  cursor:pointer;
+  transition:background .2s,border-color .2s,color .2s;
 }
-.btn:hover {transform:translateY(-2px)}
-.btn-gold {background:var(--gold);color:#15120b}
-.btn-outline {border-color:var(--line);color:white;background:transparent}
-.hero {padding:95px 0 75px;overflow:hidden}
+
+.btn:hover {
+  transform:translateY(-1px);
+}
+
+.btn-gold {
+  background:var(--gold);
+  color:#11100c;
+}
+
+.btn-gold:hover {
+  background:var(--gold-light);
+}
+
+.btn-outline {
+  border-color:rgba(217,182,109,.35);
+  color:var(--text);
+  background:transparent;
+}
+
+.btn-outline:hover {
+  border-color:var(--gold);
+  background:rgba(217,182,109,.06);
+}
+
+.hero {
+  padding:110px 0 90px;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(ellipse at 80% 15%,rgba(217,182,109,.075),transparent 38%),
+    linear-gradient(180deg,#0b0e16 0%,#080a10 100%);
+}
+
+.hero:before {
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  right:-250px;
+  top:100px;
+  border:1px solid rgba(217,182,109,.08);
+  border-radius:50%;
+  box-shadow:0 0 0 60px rgba(217,182,109,.018),
+             0 0 0 120px rgba(217,182,109,.012);
+  pointer-events:none;
+}
+
+.hero-grid {
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:65px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+
 .eyebrow {
-  display:inline-flex;gap:9px;align-items:center;
-  color:var(--gold);font-size:12px;letter-spacing:2px;
-  text-transform:uppercase;font-weight:800;
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:800;
 }
-.dot {width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.hero-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
-h1 {font-size:clamp(43px,6vw,76px);line-height:1.04;letter-spacing:-3px;margin:22px 0}
-h1 span {color:var(--gold)}
-.hero p {max-width:580px;color:var(--muted);font-size:17px}
-.actions {display:flex;gap:12px;flex-wrap:wrap;margin:29px 0}
-.small-note {font-size:12px!important;color:#8490a7!important}
+
+.dot {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 12px rgba(217,182,109,.5);
+}
+
+h1 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(48px,6.5vw,83px);
+  line-height:1.02;
+  letter-spacing:-2.8px;
+  font-weight:500;
+  margin:25px 0;
+}
+
+h1 span {
+  color:var(--gold);
+  font-style:italic;
+}
+
+.hero p {
+  max-width:570px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.actions {
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+  margin:32px 0;
+}
+
+.small-note {
+  font-size:11px!important;
+  color:#777e8e!important;
+}
+
 .prize-card {
-  padding:34px;border-radius:18px;
-  border:1px solid rgba(229,189,104,.3);
-  background:radial-gradient(ellipse at top right,rgba(229,189,104,.12),transparent 60%),var(--panel);
-  box-shadow:0 25px 90px rgba(0,0,0,.24);
+  padding:38px;
+  border-radius:5px;
+  border:1px solid rgba(217,182,109,.24);
+  background:
+    radial-gradient(ellipse at top right,rgba(217,182,109,.09),transparent 60%),
+    linear-gradient(145deg,#151923,#0e1119);
+  box-shadow:0 30px 100px rgba(0,0,0,.3);
+  position:relative;
 }
-.prize-label {font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
-.prize {font-size:clamp(42px,5vw,62px);font-weight:850;color:var(--gold);letter-spacing:-2px;margin:10px 0}
-.prize-card hr {border:0;border-top:1px solid var(--line);margin:24px 0}
-.stat-row {display:flex;justify-content:space-between;gap:15px;font-size:14px;margin:12px 0}
-.stat-row span:first-child {color:var(--muted)}
-section {padding:75px 0}
-.section-heading {max-width:650px;margin-bottom:35px}
-.section-heading h2 {font-size:clamp(29px,4vw,43px);letter-spacing:-1px;line-height:1.15;margin:13px 0}
-.section-heading p {color:var(--muted)}
-.cards {display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+.prize-card:before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:35px;
+  width:55px;
+  height:2px;
+  background:var(--gold);
+}
+
+.prize-label {
+  font-size:10px;
+  color:var(--muted);
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+.prize {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(44px,5vw,66px);
+  font-weight:500;
+  color:var(--gold);
+  letter-spacing:-2px;
+  margin:15px 0;
+}
+
+.prize-card hr {
+  border:0;
+  border-top:1px solid var(--line);
+  margin:27px 0;
+}
+
+.stat-row {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  font-size:12px;
+  margin:15px 0;
+}
+
+.stat-row span:first-child {
+  color:var(--muted);
+}
+
+.stat-row strong {
+  text-align:right;
+  font-weight:600;
+}
+
+section {
+  padding:85px 0;
+}
+
+.section-heading {
+  max-width:670px;
+  margin-bottom:40px;
+}
+
+.section-heading h2 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(32px,4vw,47px);
+  font-weight:500;
+  letter-spacing:-1.2px;
+  line-height:1.2;
+  margin:15px 0;
+}
+
+.section-heading p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
 .card {
-  padding:25px;border:1px solid var(--line);border-radius:13px;
-  background:var(--panel);
+  padding:29px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:4px;
+  background:linear-gradient(145deg,#121620,#0e1119);
+  transition:border-color .2s,background .2s;
 }
-.card-number {color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px}
-.card h3 {margin:15px 0 8px}
-.card p {margin:0;color:var(--muted);font-size:14px}
-.upload-section {background:#0c1323;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.upload-layout {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.upload-box {border:1px solid var(--line);background:var(--panel);padding:26px;border-radius:14px}
-label {display:block;margin:16px 0 7px;font-size:13px;font-weight:700}
+
+.card:hover {
+  border-color:rgba(217,182,109,.3);
+  background:linear-gradient(145deg,#171b25,#10131c);
+}
+
+.card-number {
+  color:var(--gold);
+  font-weight:800;
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.card h3 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:500;
+  font-size:21px;
+  margin:19px 0 9px;
+}
+
+.card p {
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.upload-section {
+  background:#0b0e15;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.upload-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:start;
+}
+
+.upload-box {
+  border:1px solid rgba(217,182,109,.17);
+  background:linear-gradient(145deg,#131722,#0e1119);
+  padding:30px;
+  border-radius:4px;
+}
+
+.upload-box h3 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  font-weight:500;
+  margin-top:0;
+}
+
+label {
+  display:block;
+  margin:18px 0 8px;
+  font-size:12px;
+  font-weight:700;
+  color:#d7d8de;
+}
+
 input,textarea {
-  width:100%;padding:13px 14px;border-radius:8px;
-  background:#0a1020;color:white;border:1px solid #29344a;
+  width:100%;
+  padding:14px;
+  border-radius:3px;
+  background:#090c13;
+  color:white;
+  border:1px solid #292e3b;
   outline:none;
 }
-input:focus,textarea:focus {border-color:var(--gold)}
-input[type=file] {padding:12px}
-textarea {min-height:100px;resize:vertical}
+
+input:focus,textarea:focus {
+  border-color:var(--gold);
+}
+
+input[type=file] {
+  padding:12px;
+  font-size:12px;
+}
+
+textarea {
+  min-height:100px;
+  resize:vertical;
+}
+
 .preview {
-  margin-top:15px;min-height:100px;border:1px dashed #39445a;
-  border-radius:8px;display:grid;place-items:center;color:var(--muted);
-  padding:12px;overflow:hidden;
+  margin-top:15px;
+  min-height:110px;
+  border:1px dashed #343a49;
+  border-radius:3px;
+  display:grid;
+  place-items:center;
+  color:var(--muted);
+  padding:15px;
+  overflow:hidden;
+  font-size:12px;
 }
-.preview img {max-width:100%;max-height:240px;object-fit:contain}
-.notice {padding:13px;background:rgba(229,189,104,.08);border:1px solid rgba(229,189,104,.2);border-radius:8px;color:#e9d9b6;font-size:12px;margin:16px 0}
-.faq {max-width:800px}
-details {padding:20px 0;border-bottom:1px solid var(--line)}
-summary {cursor:pointer;font-weight:700}
-details p {color:var(--muted);font-size:14px}
-footer {padding:35px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-.footer-row {display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a {color:var(--gold)}
+
+.preview img {
+  max-width:100%;
+  max-height:240px;
+  object-fit:contain;
+}
+
+.notice {
+  padding:15px;
+  background:rgba(217,182,109,.055);
+  border:1px solid rgba(217,182,109,.16);
+  border-radius:3px;
+  color:#d7c9a9;
+  font-size:11px;
+  margin:18px 0;
+}
+
+.faq {
+  max-width:800px;
+}
+
+details {
+  padding:22px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+summary {
+  cursor:pointer;
+  font-weight:650;
+  font-size:14px;
+}
+
+details p {
+  color:var(--muted);
+  font-size:13px;
+  padding-top:8px;
+}
+
+footer {
+  padding:38px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+  color:var(--muted);
+  font-size:12px;
+  background:#07090e;
+}
+
+.footer-row {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+footer a {
+  color:var(--gold);
+}
+
 .modal {
-  display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);
-  z-index:30;align-items:center;justify-content:center;padding:20px;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.84);
+  z-index:30;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(8px);
 }
-.modal-content {width:min(450px,100%);background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:25px}
-.modal-content h2 {margin-top:0}
-.modal-content p {color:var(--muted);font-size:14px}
-.close {float:right;background:none;border:0;color:white;font-size:24px;cursor:pointer}
+
+.modal-content {
+  width:min(450px,100%);
+  background:#121620;
+  border:1px solid rgba(217,182,109,.22);
+  border-radius:4px;
+  padding:28px;
+}
+
+.modal-content h2 {
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:500;
+  margin-top:0;
+}
+
+.modal-content p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+.close {
+  float:right;
+  background:none;
+  border:0;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+}
+
 @media(max-width:800px) {
- .hero-grid,.upload-layout {grid-template-columns:1fr}
- .hero {padding-top:60px}
- .cards {grid-template-columns:1fr}
- .nav-links {gap:12px}
- .nav-links a:not(.btn) {display:none}
- h1 {letter-spacing:-2px}
+  .hero-grid,.upload-layout {
+    grid-template-columns:1fr;
+  }
+
+  .hero {
+    padding:75px 0 65px;
+  }
+
+  .hero-grid {
+    gap:35px;
+  }
+
+  .cards {
+    grid-template-columns:1fr;
+  }
+
+  .nav-links {
+    gap:12px;
+  }
+
+  .nav-links a:not(.btn) {
+    display:none;
+  }
+
+  h1 {
+    letter-spacing:-1.8px;
+  }
+
+  section {
+    padding:65px 0;
+  }
+
+  .prize-card {
+    padding:30px;
+  }
+
+  .upload-box {
+    padding:22px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto;
+  }
+
+  *,*::before,*::after {
+    transition:none!important;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="container">
     <nav>
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <span class="brand-icon">V</span>
         <span>VANGUARD <span style="color:var(--gold)">MARK</span></span>
       </a>
+
       <div class="nav-links">
         <a href="#how">How it works</a>
         <a href="#competition">Competition</a>
@@ -152,104 +590,177 @@ footer a {color:var(--gold)}
 </header>
 
 <main>
+
   <section class="hero" id="competition">
     <div class="container hero-grid">
+
       <div>
         <div class="eyebrow"><span class="dot"></span> THE DESIGN CHALLENGE</div>
+
         <h1>One design.<br>A bold vision.<br><span>$50,000.</span></h1>
+
         <p>
           Every great brand starts with an idea. Bring yours to the table
           and showcase your creativity in the Vanguard Mark logo competition.
         </p>
+
         <div class="actions">
           <a href="#submit" class="btn btn-gold">Submit Your Logo →</a>
           <a href="#how" class="btn btn-outline">Discover how it works</a>
         </div>
+
         <p class="small-note">Review the official competition rules, eligibility requirements and winner-selection terms before entering.</p>
       </div>
+
       <div class="prize-card">
         <div class="prize-label">Advertised grand prize</div>
         <div class="prize">$50,000</div>
         <p>One winning design. A chance to make your mark.</p>
+
         <hr>
+
         <div class="stat-row"><span>Entry fee</span><strong>$3 per entry</strong></div>
         <div class="stat-row"><span>Submission format</span><strong>Digital logo design</strong></div>
         <div class="stat-row"><span>Entry status</span><strong>Subject to verification</strong></div>
+
         <div class="notice">The prize is an advertised target, not a guarantee of available funds. Paid entries must not open until the prize funding, rules and applicable legal requirements are verified.</div>
       </div>
+
     </div>
   </section>
 
   <section id="how">
     <div class="container">
+
       <div class="section-heading">
         <div class="eyebrow">THE PROCESS</div>
         <h2>Your idea deserves a place at the table.</h2>
         <p>A simple submission journey, designed to keep the process clear at every stage.</p>
       </div>
+
       <div class="cards">
-        <article class="card"><div class="card-number">STEP 01</div><h3>Create your account</h3><p>Set up your profile so your submission and entry details can be associated with you.</p></article>
-        <article class="card"><div class="card-number">STEP 02</div><h3>Upload your design</h3><p>Share an original logo design in a supported image format and provide its details.</p></article>
-        <article class="card"><div class="card-number">STEP 03</div><h3>Review your entry</h3><p>Check the competition terms and payment details. Entries require verified payment before activation.</p></article>
+        <article class="card">
+          <div class="card-number">STEP 01</div>
+          <h3>Create your account</h3>
+          <p>Set up your profile so your submission and entry details can be associated with you.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">STEP 02</div>
+          <h3>Upload your design</h3>
+          <p>Share an original logo design in a supported image format and provide its details.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">STEP 03</div>
+          <h3>Review your entry</h3>
+          <p>Check the competition terms and payment details. Entries require verified payment before activation.</p>
+        </article>
       </div>
+
     </div>
   </section>
 
   <section class="upload-section" id="submit">
     <div class="container upload-layout">
+
       <div>
         <div class="eyebrow">MAKE YOUR MARK</div>
+
         <div class="section-heading">
           <h2>Bring your vision to life.</h2>
           <p>Start by preparing your logo design. You'll be able to preview your image before continuing.</p>
         </div>
+
         <div class="notice">This initial version previews your logo locally in your browser. It does not upload files to a server, create accounts, charge payments or confirm competition entries.</div>
       </div>
+
       <form class="upload-box" id="logoForm">
         <h3>Logo submission</h3>
         <p class="small-note">Prepare your design details below.</p>
+
         <label for="designTitle">Design title</label>
         <input id="designTitle" name="designTitle" maxlength="100" required placeholder="Give your design a name">
+
         <label for="designDescription">About your design</label>
         <textarea id="designDescription" name="designDescription" maxlength="1000" placeholder="Tell us a little about your idea"></textarea>
+
         <label for="logoFile">Upload logo image</label>
         <input id="logoFile" name="logoFile" type="file" accept="image/png,image/jpeg,image/webp" required>
+
         <div class="preview" id="preview">Your logo preview will appear here.</div>
+
         <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400">
           <input type="checkbox" id="agree" required style="width:auto;margin-top:5px">
           <span>I confirm that this is my design or that I have permission to submit it, and I agree to review the official competition terms.</span>
         </label>
+
         <button class="btn btn-gold" type="submit" style="width:100%;margin-top:16px">Continue to entry details →</button>
+
         <p class="small-note">Demo only: no payment will be taken and no submission will be delivered.</p>
       </form>
+
     </div>
   </section>
 
   <section>
     <div class="container">
+
       <div class="section-heading">
         <div class="eyebrow">CLEAR EXPECTATIONS</div>
         <h2>Competition information</h2>
         <p>Participants should understand how entries are assessed and how the prize is awarded before paying an entry fee.</p>
       </div>
+
       <div class="cards">
-        <article class="card"><h3>Original work</h3><p>Submit work you created or have permission to use. Do not submit logos that infringe another person's rights.</p></article>
-        <article class="card"><h3>Transparent rules</h3><p>Eligibility, deadlines, judging criteria, refunds and winner selection must be published before paid entry opens.</p></article>
-        <article class="card"><h3>Payment security</h3><p>Entry payments should only be confirmed after the payment provider verifies the transaction.</p></article>
+        <article class="card">
+          <h3>Original work</h3>
+          <p>Submit work you created or have permission to use. Do not submit logos that infringe another person's rights.</p>
+        </article>
+
+        <article class="card">
+          <h3>Transparent rules</h3>
+          <p>Eligibility, deadlines, judging criteria, refunds and winner selection must be published before paid entry opens.</p>
+        </article>
+
+        <article class="card">
+          <h3>Payment security</h3>
+          <p>Entry payments should only be confirmed after the payment provider verifies the transaction.</p>
+        </article>
       </div>
+
     </div>
   </section>
 
   <section>
     <div class="container faq">
+
       <div class="eyebrow">HELP CENTRE</div>
       <h2>Frequently asked questions</h2>
-      <details><summary>How much does an entry cost?</summary><p>The proposed entry fee is $3. Real payments are not enabled in this demonstration.</p></details>
-      <details><summary>How do I know my entry has been received?</summary><p>A live version should provide an account dashboard and a unique submission reference after the payment and submission have been verified.</p></details>
-      <details><summary>How is the winner selected?</summary><p>The final rules must explain whether selection is based on judging, public voting or another lawful method. The live competition must not accept paid entries until those rules are finalized.</p></details>
-      <details><summary>How can I contact support?</summary><p>Use the official support email published by Vanguard Mark once the address has been configured. No unverified contact details are displayed here.</p></details>
+
+      <details>
+        <summary>How much does an entry cost?</summary>
+        <p>The proposed entry fee is $3. Real payments are not enabled in this demonstration.</p>
+      </details>
+
+      <details>
+        <summary>How do I know my entry has been received?</summary>
+        <p>A live version should provide an account dashboard and a unique submission reference after the payment and submission have been verified.</p>
+      </details>
+
+      <details>
+        <summary>How is the winner selected?</summary>
+        <p>The final rules must explain whether selection is based on judging, public voting or another lawful method. The live competition must not accept paid entries until those rules are finalized.</p>
+      </details>
+
+      <details>
+        <summary>How can I contact support?</summary>
+        <p>Use the official support email published by Vanguard Mark once the address has been configured. No unverified contact details are displayed here.</p>
+      </details>
+
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -285,6 +796,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 function openModal(id) {
   document.getElementById(id).style.display = 'flex';
 }
+
 function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
@@ -295,23 +807,29 @@ let previewUrl = null;
 
 fileInput.addEventListener('change', function() {
   const file = this.files && this.files[0];
+
   if (!file) {
     preview.textContent = 'Your logo preview will appear here.';
     return;
   }
+
   if (!file.type.startsWith('image/')) {
     preview.textContent = 'Please select a valid image file.';
     this.value = '';
     return;
   }
+
   if (file.size > 5 * 1024 * 1024) {
     preview.textContent = 'Please choose an image smaller than 5 MB.';
     this.value = '';
     return;
   }
+
   if (previewUrl) URL.revokeObjectURL(previewUrl);
+
   previewUrl = URL.createObjectURL(file);
   preview.innerHTML = '';
+
   const image = document.createElement('img');
   image.src = previewUrl;
   image.alt = 'Preview of your logo design';
@@ -320,12 +838,17 @@ fileInput.addEventListener('change', function() {
 
 document.getElementById('logoForm').addEventListener('submit', function(event) {
   event.preventDefault();
+
   if (!this.reportValidity()) return;
+
   const title = document.getElementById('designTitle').value.trim();
+
   document.getElementById('entryMessage').textContent =
     'Your design "' + title + '" is prepared in this browser demonstration. No files or personal information have been sent to a server.';
+
   openModal('entryModal');
 });
 </script>
+
 </body>
   </html>
