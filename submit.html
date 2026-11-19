@@ -1,0 +1,183 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Your Logo | Vanguard Mark</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{padding:20px 6%;background:#111;border-bottom:1px solid #40351f}
+.brand{color:#d8b45a;font-size:20px;font-weight:bold;letter-spacing:1px}
+main{max-width:760px;margin:35px auto;padding:20px}
+.card{background:#151515;border:1px solid #40351f;border-radius:14px;padding:25px}
+h1{font-size:clamp(26px,5vw,36px);margin-top:0}
+.gold{color:#d8b45a}
+p{color:#bbb;line-height:1.7}
+label{display:block;margin:20px 0 9px;font-weight:bold}
+input[type="text"],textarea,input[type="file"]{width:100%;padding:13px;background:#090909;color:white;border:1px solid #444;border-radius:7px}
+textarea{min-height:90px;resize:vertical}
+button,.button{display:inline-block;padding:13px 18px;border:0;border-radius:7px;background:#d8b45a;color:#111;font-weight:bold;cursor:pointer;text-decoration:none;margin-top:16px}
+button:disabled{opacity:.5}
+.secondary{background:#292929;color:white;border:1px solid #555}
+#preview{display:none;max-width:100%;max-height:300px;margin-top:18px;border-radius:8px}
+#message{overflow-wrap:anywhere}
+.notice{padding:14px;background:#201c12;border-left:3px solid #d8b45a;margin-top:20px;color:#d8d0bd;line-height:1.6;font-size:14px}
+nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:15px}
+nav a{color:#d8b45a}
+footer{text-align:center;color:#777;padding:25px;font-size:13px}
+[hidden]{display:none!important}
+</style></head><body>
+<header>
+  <div class="brand">VANGUARD MARK</div>
+  <nav>
+    <a href="./dashboard.html">Dashboard</a>
+    <a href="./submissions.html">My submissions</a>
+    <a href="./support.html">Support</a>
+  </nav>
+</header><main>
+  <section class="card">
+    <h1>Submit your <span class="gold">logo design.</span></h1><p>
+  Upload your original logo design to prepare your Vanguard Mark
+  competition entry.
+</p>
+
+<div class="notice">
+  Entry fee: <strong>$3 USD</strong>.<br>
+  Uploading a logo does not confirm an entry. Your entry can only
+  be confirmed after the payment system verifies your payment.
+  Review the competition rules before paying.
+</div>
+
+<form id="logoForm">
+  <label for="logoTitle">Logo title</label>
+  <input id="logoTitle" type="text" maxlength="100"
+         placeholder="Give your design a name" required>
+
+  <label for="logoFile">Upload your logo</label>
+  <input id="logoFile" type="file"
+         accept="image/png,image/jpeg,image/webp" required>
+
+  <img id="preview" alt="Preview of your logo">
+
+  <label for="description">About your design</label>
+  <textarea id="description" maxlength="1000"
+            placeholder="Briefly describe your design"></textarea>
+
+  <label>
+    <input id="original" type="checkbox" required>
+    I confirm that this is my original design or that I have the
+    necessary rights to submit it.
+  </label>
+
+  <button id="submitButton" type="submit">Continue to payment — $3</button>
+</form>
+
+<p id="message" role="status" aria-live="polite"></p>
+
+  </section>
+</main><footer>
+  Vanguard Mark · Creative ideas deserve recognition.
+</footer><script type="module">
+import { auth, onAuthStateChanged } from "./firebase.js";
+
+const form = document.getElementById("logoForm");
+const fileInput = document.getElementById("logoFile");
+const preview = document.getElementById("preview");
+const message = document.getElementById("message");
+const submitButton = document.getElementById("submitButton");
+
+let currentUser = null;
+
+onAuthStateChanged(auth, user => {
+  currentUser = user;
+
+  if (!user) {
+    window.location.href = "./account.html";
+  }
+});
+
+fileInput.addEventListener("change", () => {
+  const file = fileInput.files[0];
+
+  preview.style.display = "none";
+
+  if (!file) return;
+
+  if (!["image/png", "image/jpeg", "image/webp"].includes(file.type)) {
+    message.textContent = "Please choose a PNG, JPG, or WebP image.";
+    fileInput.value = "";
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    message.textContent = "Your image must be 5 MB or smaller.";
+    fileInput.value = "";
+    return;
+  }
+
+  preview.src = URL.createObjectURL(file);
+  preview.style.display = "block";
+  message.textContent = "Image ready for preview.";
+});
+
+form.addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (!currentUser) {
+    message.textContent = "Please sign in before submitting a logo.";
+    return;
+  }
+
+  const file = fileInput.files[0];
+
+  if (!file) {
+    message.textContent = "Please select a logo image.";
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    message.textContent = "Your image must be 5 MB or smaller.";
+    return;
+  }
+
+  submitButton.disabled = true;
+  message.textContent = "Preparing your submission...";
+
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    try {
+      const submission = {
+        id: crypto.randomUUID(),
+        userId: currentUser.uid,
+        title: document.getElementById("logoTitle").value.trim(),
+        description: document.getElementById("description").value.trim(),
+        imageData: reader.result,
+        fileName: file.name,
+        createdAt: new Date().toISOString(),
+        paymentStatus: "unpaid",
+        submissionStatus: "awaiting_payment",
+        demoOnly: true
+      };
+
+      sessionStorage.setItem(
+        "vanguardMarkPendingSubmission",
+        JSON.stringify(submission)
+      );
+
+      window.location.href = "./payment.html";
+    } catch (error) {
+      message.textContent =
+        "Unable to prepare this image. Please try a smaller file.";
+      submitButton.disabled = false;
+    }
+  };
+
+  reader.onerror = () => {
+    message.textContent = "Unable to read this image. Please try again.";
+    submitButton.disabled = false;
+  };
+
+  reader.readAsDataURL(file);
+});
+</script></body>
+  </html>
